@@ -35,6 +35,55 @@
 
         nav a:hover { color: #f8c471; }
 
+        /* Hamburger Button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        /* Menu Styles */
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: rgba(0, 0, 0, 0.9);
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            }
+
+            nav .menu.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
         .hero {
             margin-top: 80px;
             text-align: center;
@@ -104,9 +153,9 @@
         }
 
         .sports img, .activities img, .info-box img {
-            width: 100%;       /* Ensure the image takes up full container width */
-            max-width: 600px;  /* Maximum size for larger screens */
-            height: auto;      /* Maintain aspect ratio */
+            width: 100%;
+            max-width: 600px;
+            height: auto;
             border-radius: 10px;
             margin-top: 10px;
         }
@@ -114,21 +163,21 @@
         /* Mobile Styles */
         @media (max-width: 768px) {
             .sports img, .activities img, .info-box img {
-                max-width: 90%;  /* Limit to 90% width for smaller screens */
+                max-width: 90%;
             }
         }
 
         /* Tablet and Small Laptop Styles */
         @media (max-width: 1024px) {
             .sports img, .activities img, .info-box img {
-                max-width: 85%;  /* Limit to 85% width for tablets */
+                max-width: 85%;
             }
         }
 
         /* Large Laptop / Desktop Styles */
         @media (min-width: 1025px) {
             .sports img, .activities img, .info-box img {
-                max-width: 600px;  /* For large screens, allow images to have a maximum size */
+                max-width: 600px;
             }
         }
 
@@ -169,17 +218,32 @@
                 height: 100px;
             }
         }
+
+        footer {
+            text-align: center;
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
     </style>
 </head>
 <body>
     <nav>
-        <div>
+        <div class="menu">
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#activities">Activities</a>
             <a href="#sports">Sports</a>
             <a href="#contact">Contact</a>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </nav>
 
@@ -189,6 +253,7 @@
         <p>Student at IUT | Aspiring to be a Structural Engineer</p>
         <a href="#contact" class="cta-button">Contact Me</a>
     </div>
+
     <section id="about" class="section">
         <h2>About Me</h2>
         <p>I am a third-year student at the Islamic University of Technology (IUT), pursuing Civil and Environmental Engineering, with a focus on Structural Engineering. I have a strong foundation in design and analysis, with a particular interest in sustainable structures and material innovations. My skills include proficiency in AutoCAD, MS Word, Excel, PowerPoint, and I am actively learning advanced tools like ETABS and Revit. As a dedicated student, I am always eager to participate in real-world projects, collaborating with both my peers and industry professionals to expand my knowledge and skills in the field of civil and structural engineering.</p>
@@ -260,7 +325,7 @@
     </section>
 
     <section id="contact" class="section">
-        <h2>Get in Touch</h2>
+        <h2>Contact</h2>
         <div class="contact-icons">
             <a href="https://www.facebook.com/muntasir.raihan.7?mibextid=ZbWKwL" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="tel:+8801856491451" target="_blank" title="Phone" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
@@ -268,16 +333,34 @@
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2024 Muntasir Raihan Zidan. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Skill Progress Bar Animation
+        // Toggle menu for mobile
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        // Skill Progress Bar Animation when in view
         document.addEventListener('DOMContentLoaded', () => {
             const progressBars = document.querySelectorAll('.progress-bar');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progress = entry.target.getAttribute('data-progress');
+                        const progressElement = entry.target.querySelector('.progress');
+                        progressElement.style.width = progress + '%';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
             progressBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                const progressElement = bar.querySelector('.progress');
-                setTimeout(() => {
-                    progressElement.style.width = progress + '%';
-                }, 500); // Delay added for smooth animation
+                observer.observe(bar);
             });
         });
     </script>
