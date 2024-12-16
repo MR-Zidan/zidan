@@ -6,168 +6,170 @@
     <meta name="description" content="Portfolio of Muntasir Raihan Zidan - Student at IUT, aspiring structural engineer, and active participant in sports and extracurricular activities.">
     <title>Zidan's Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: #000; color: #fff; }
 
-        nav { 
-            padding: 20px; 
-            background: rgba(0, 0, 0, 0.8); 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 250px; 
-            height: 100%; 
-            display: flex; 
-            flex-direction: column; 
-            z-index: 1000; 
-            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+        nav {
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
-        nav a { 
-            color: #fff; 
-            text-decoration: none; 
-            margin: 20px 0; 
-            font-size: 18px; 
-            transition: color 0.3s; 
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
         }
+
         nav a:hover { color: #f8c471; }
 
-        .hero { 
-            margin-left: 270px; 
-            margin-top: 100px; 
-            text-align: center; 
-            position: relative;
-        }
-        .hero h1 { 
-            font-size: 2.5rem; 
-            margin-bottom: 10px; 
-        }
-        .hero p { font-size: 1.2rem; color: #f0f0f0; }
-        .cta-button { 
-            display: inline-block; 
-            padding: 10px 20px; 
-            margin-top: 20px; 
-            background: #f8c471; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            transition: background 0.3s; 
-        }
-        .cta-button:hover { background: #e67e22; }
-
-        .hero img {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
+        .hero {
+            margin-top: 80px;
+            text-align: center;
         }
 
-        .section { 
-            padding: 50px 20px; 
-            text-align: center; 
-            margin-left: 270px; 
-        }
-        .section h2 { font-size: 2rem; margin-bottom: 20px; }
-
-        .info-box { 
-            background: rgba(255, 255, 255, 0.1); 
-            border-radius: 10px; 
-            margin: 20px auto; 
-            padding: 20px; 
-            max-width: 600px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-            text-align: left; 
-        }
-        .info-box img { 
-            width: 100%; 
-            border-radius: 10px; 
-        }
-        .info-details h3 { font-size: 1.5rem; margin: 10px 0; }
-        .info-details p { font-size: 1rem; color: #ccc; }
-
-        .progress-bar { 
-            background: #333; 
-            height: 20px; 
-            border-radius: 10px; 
-            margin: 10px 0; 
-            width: 100%; 
-        }
-        .progress { 
-            background: #00bcd4; 
-            height: 100%; 
-            text-align: center; 
-            line-height: 20px; 
-            color: white; 
-            border-radius: 10px; 
-            width: 0%; 
-            animation: progressBarAnimation 2s ease-out forwards; 
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        @keyframes progressBarAnimation {
-            0% { width: 0%; }
-            100% { width: var(--progress-width); }
+        .hero p {
+            font-size: 1.2rem;
+            color: #f0f0f0;
         }
 
-        .sports, .activities { 
-            background: #212121; 
-            padding: 30px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
-            margin-top: 30px; 
-        }
-        .sports img, .activities img { 
-            width: 100%; 
-            border-radius: 10px; 
-            margin-top: 10px; 
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #f8c471;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
         }
 
-        /* Contact Icons */
+        .cta-button:hover {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            background: #333;
+            height: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .progress {
+            background: #00bcd4;
+            height: 100%;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 10px;
+            transition: width 1s ease-out;
+        }
+
+        .sports, .activities {
+            background: #212121;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin-top: 30px;
+        }
+
+        .sports img, .activities img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
         .contact-icons {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
         }
+
         .contact-icons a {
             color: #f8c471;
             font-size: 30px;
             text-decoration: none;
             transition: color 0.3s;
         }
+
         .contact-icons a:hover {
             color: #e67e22;
         }
 
         @media (max-width: 768px) {
-            nav { padding: 15px 20px; width: 200px; }
-            .hero h1 { font-size: 2rem; }
-            .section { margin-left: 0; }
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero img {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">My Projects</a>
-        <a href="#skills">Skills & Expertise</a>
-        <a href="#activities">Extracurricular</a>
-        <a href="#sports">Sports & Achievements</a>
-        <a href="#contact">Get in Touch</a>
+        <div>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#activities">Activities</a>
+            <a href="#sports">Sports</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <div class="hero">
-        <img src="n.png" alt="Muntasir Raihan Zidan"> <!-- Replace with your image -->
+        <img src="n.png" alt="Muntasir Raihan Zidan" style="border-radius: 50%; width: 120px; height: 120px;">
         <h1>Hi, I'm Muntasir Raihan Zidan</h1>
-        <p>Student at IUT | Aspiring to be a  Structural Engineer</p>
+        <p>Student at IUT | Aspiring to be a Structural Engineer</p>
         <a href="#contact" class="cta-button">Contact Me</a>
     </div>
-
     <section id="about" class="section">
         <h2>About Me</h2>
         <p>I am a third-year student at the Islamic University of Technology (IUT), pursuing Civil and Environmental Engineering, with a focus on Structural Engineering. I have a strong foundation in design and analysis, with a particular interest in sustainable structures and material innovations. My skills include proficiency in AutoCAD, MS Word, Excel, PowerPoint, and I am actively learning advanced tools like ETABS and Revit. As a dedicated student, I am always eager to participate in real-world projects, collaborating with both my peers and industry professionals to expand my knowledge and skills in the field of civil and structural engineering.</p>
+    
     </section>
 
     <section id="projects" class="section">
@@ -181,6 +183,25 @@
             <img src="slab reinforcement.png" alt="RCC Slab and Beam Design">
             <h3>RCC Slab and Beam Design</h3>
             <p>Detailed modeling of RCC slab and beam structures using AutoCAD, including column and beam calculations.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills & Expertise</h2>
+        <div class="progress-bar" data-progress="60">
+            <div class="progress" style="width: 0%;">AutoCAD - 60%</div>
+        </div>
+        <div class="progress-bar" data-progress="40">
+            <div class="progress" style="width: 0%;">Abaqus - 40%</div>
+        </div>
+        <div class="progress-bar" data-progress="85">
+            <div class="progress" style="width: 0%;">MS Word - 85%</div>
+        </div>
+        <div class="progress-bar" data-progress="80">
+            <div class="progress" style="width: 0%;">MS Excel - 80%</div>
+        </div>
+        <div class="progress-bar" data-progress="75">
+            <div class="progress" style="width: 0%;">MS PowerPoint - 75%</div>
         </div>
     </section>
 
@@ -200,25 +221,7 @@
                 <p>The ACI IUT Student Chapter, affiliated with the American Concrete Institute, organizes Olympiads, quizzes, and seminars, fostering collaborations with international experts to empower students.</p>
             </div>
         </div>
-    </section>
-
-    <section id="skills" class="section">
-        <h2>Skills & Expertise</h2>
-        <div class="progress-bar" data-progress="60%">
-            <div class="progress">AutoCAD - 60%</div>
-        </div>
-        <div class="progress-bar" data-progress="40%">
-            <div class="progress">Abaqus - 40%</div>
-        </div>
-        <div class="progress-bar" data-progress="85%">
-            <div class="progress">MS Word - 85%</div>
-        </div>
-        <div class="progress-bar" data-progress="80%">
-            <div class="progress">MS Excel - 80%</div>
-        </div>
-        <div class="progress-bar" data-progress="75%">
-            <div class="progress">MS PowerPoint - 75%</div>
-        </div>
+  
     </section>
 
     <section id="sports" class="section sports">
@@ -234,11 +237,27 @@
             <img src="basketball.jpeg" alt="Basketball Achievement">
         </div>
     </section>
-
     <section id="contact" class="section">
         <h2>Get in Touch</h2>
         <div class="contact-icons">
-            <a href="https://www.facebook.com/muntasir.raihan.7?mibextid=ZbWKwL" target="_blank" title="facebook"><i class="fab fa-facebook"></i></a>
-            <a href="tel:+8801856491451" target="_blank" title="Phone"><i class="fas fa-phone-alt"></i></a>
-            <a href="https://www.linkedin.com/in/muntasir-raihan-zidan-882346206" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-       
+            <a href="https://www.facebook.com/muntasir.raihan.7?mibextid=ZbWKwL" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="tel:+8801856491451" target="_blank" title="Phone" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://www.linkedin.com/in/muntasir-raihan-zidan-882346206" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <script>
+        // Skill Progress Bar Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const progress = bar.getAttribute('data-progress');
+                const progressElement = bar.querySelector('.progress');
+                setTimeout(() => {
+                    progressElement.style.width = progress + '%';
+                }, 500); // Delay added for smooth animation
+            });
+        });
+    </script>
+</body>
+</html>
