@@ -103,10 +103,33 @@
             margin-top: 30px;
         }
 
-        .sports img, .activities img {
-            width: 100%;
+        .sports img, .activities img, .info-box img {
+            width: 100%;       /* Ensure the image takes up full container width */
+            max-width: 600px;  /* Maximum size for larger screens */
+            height: auto;      /* Maintain aspect ratio */
             border-radius: 10px;
             margin-top: 10px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .sports img, .activities img, .info-box img {
+                max-width: 90%;  /* Limit to 90% width for smaller screens */
+            }
+        }
+
+        /* Tablet and Small Laptop Styles */
+        @media (max-width: 1024px) {
+            .sports img, .activities img, .info-box img {
+                max-width: 85%;  /* Limit to 85% width for tablets */
+            }
+        }
+
+        /* Large Laptop / Desktop Styles */
+        @media (min-width: 1025px) {
+            .sports img, .activities img, .info-box img {
+                max-width: 600px;  /* For large screens, allow images to have a maximum size */
+            }
         }
 
         .contact-icons {
@@ -169,7 +192,6 @@
     <section id="about" class="section">
         <h2>About Me</h2>
         <p>I am a third-year student at the Islamic University of Technology (IUT), pursuing Civil and Environmental Engineering, with a focus on Structural Engineering. I have a strong foundation in design and analysis, with a particular interest in sustainable structures and material innovations. My skills include proficiency in AutoCAD, MS Word, Excel, PowerPoint, and I am actively learning advanced tools like ETABS and Revit. As a dedicated student, I am always eager to participate in real-world projects, collaborating with both my peers and industry professionals to expand my knowledge and skills in the field of civil and structural engineering.</p>
-    
     </section>
 
     <section id="projects" class="section">
@@ -221,14 +243,13 @@
                 <p>The ACI IUT Student Chapter, affiliated with the American Concrete Institute, organizes Olympiads, quizzes, and seminars, fostering collaborations with international experts to empower students.</p>
             </div>
         </div>
-  
     </section>
 
     <section id="sports" class="section sports">
         <h2>Sports & Achievements</h2>
         <div>
             <h3>Volleyball</h3>
-            <p>Member of the  IUT CEE  Volleyball Team. Participated in intra-department tournaments, securing multiple top-three finishes.</p>
+            <p>Member of the IUT CEE Volleyball Team. Participated in intra-department tournaments, securing multiple top-three finishes.</p>
             <img src="Volleyball.jpeg" alt="Volleyball Achievement">
         </div>
         <div>
@@ -237,6 +258,7 @@
             <img src="Basketball.jpeg" alt="Basketball Achievement">
         </div>
     </section>
+
     <section id="contact" class="section">
         <h2>Get in Touch</h2>
         <div class="contact-icons">
