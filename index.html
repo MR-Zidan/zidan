@@ -1,34 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zidan — Portfolio</title>
-  <meta name="description" content="Muntasir Raihan Zidan — Civil & Environmental student, structural engineering, leader, athlete." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zidan — Premium Portfolio</title>
+  <meta name="description" content="Muntasir Raihan Zidan — Transportation Engineering student, leader & athlete" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    /* ---------- Variables ---------- */
     :root{
-      --bg: #05060a;
+      --bg:#03040a;
       --panel: rgba(255,255,255,0.02);
-      --muted: #bfc7d6;
-      --text: #e7eefc;
-      --accent: #1e54f2; /* royal blue accent */
-      --accent-2: #2b6ef6;
+      --muted:#bfc7d6;
+      --text:#e7eefc;
+      --accent:#1e54f2; /* royal blue */
+      --accent-2:#2b6ef6;
+      --card-radius:14px;
       --glass: rgba(255,255,255,0.03);
-      --glass-strong: rgba(255,255,255,0.05);
-      --card-radius: 14px;
     }
 
-    /* ---------- Base ---------- */
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(43,110,246,0.06), transparent 8%),
-                  linear-gradient(180deg,#04050a 0%, #070814 60%);
+      font-family:'Poppins',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(900px 500px at 12% 10%, rgba(43,110,246,0.06), transparent 8%),
+        linear-gradient(180deg,#02030a 0%, #070814 60%);
       color:var(--text);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -38,350 +36,478 @@
     a{color:var(--accent); text-decoration:none}
     img{display:block; max-width:100%}
 
-    /* ---------- NAV ---------- */
-    .nav-wrap{
+    /* Top navigation */
+    nav{
       position:fixed; top:12px; left:12px; right:12px; z-index:999;
       display:flex; justify-content:space-between; align-items:center;
-      padding:10px 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      border: 1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+      padding:12px 18px; border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03); box-shadow:0 10px 36px rgba(0,0,0,0.6);
       backdrop-filter: blur(6px);
     }
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .avatar{width:44px;height:44px;border-radius:10px;overflow:hidden;border:2px solid rgba(255,255,255,0.04)}
+    .brand h4{margin:0;font-size:16px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
 
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand .avatar{
-      width:46px; height:46px; border-radius:10px; overflow:hidden; border:2px solid rgba(255,255,255,0.04);
-      box-shadow: 0 6px 18px rgba(11,20,40,0.6);
-    }
-    .brand h4{margin:0; font-size:16px; font-weight:700; color:var(--text); letter-spacing:-0.2px}
-    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--muted); padding:8px 10px; border-radius:8px; font-weight:500; transition:all .18s}
+    .nav-links a:hover{color:var(--text); background:linear-gradient(90deg, rgba(30,84,242,0.06), rgba(43,110,246,0.03)); transform:translateY(-3px)}
 
-    nav .links{display:flex; gap:18px; align-items:center}
-    nav .links a{color:var(--muted); font-weight:500; padding:8px 10px; border-radius:8px; transition:all .18s}
-    nav .links a:hover{color:var(--text); background:linear-gradient(90deg, rgba(30,84,242,0.06), rgba(43,110,246,0.03)); transform:translateY(-3px); box-shadow:0 8px 20px rgba(27,50,150,0.06)}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; padding:8px 12px;border-radius:10px;font-weight:600; box-shadow:0 8px 30px rgba(30,84,242,0.12)}
 
-    /* CTA */
-    .cta{
-      background: linear-gradient(90deg,var(--accent),var(--accent-2));
-      color:white; padding:8px 12px; border-radius:10px; font-weight:600; box-shadow:0 8px 30px rgba(30,84,242,0.14);
-      display:inline-flex; gap:8px; align-items:center;
-    }
+    /* container */
+    .container{max-width:1100px;margin:92px auto 70px;padding:20px;}
 
-    /* ---------- MOBILE NAV (hamburger) ---------- */
-    .hamb {
-      display:none;
-      width:44px; height:44px; border-radius:10px; background:var(--glass); display:flex; align-items:center; justify-content:center; cursor:pointer;
-    }
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:center}
+    .hero-card{background:var(--panel); padding:28px;border-radius:var(--card-radius);border:1px solid rgba(255,255,255,0.03); box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+    .hero h1{margin:0;font-size:34px;color:var(--accent);line-height:1.02}
+    .hero p.lead{color:var(--muted);margin-top:8px}
+    .hero-right{display:flex;flex-direction:column;gap:14px;align-items:center}
+    .headshot{width:220px;height:220px;border-radius:18px;overflow:hidden;border:3px solid rgba(255,255,255,0.03); box-shadow:0 18px 46px rgba(0,0,0,0.6)}
 
-    /* ---------- LAYOUT ---------- */
-    .container{
-      max-width:1100px;
-      margin:96px auto 60px;
-      padding:22px;
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:28px;
-      align-items:center;
-    }
-
-    .hero-card{
-      background:var(--panel);
-      padding:28px;
-      border-radius:var(--card-radius);
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 12px 40px rgba(3,10,25,0.7);
-      transform-origin:center;
-    }
-
-    .hero h1{font-size:36px; margin:0 0 8px; color:var(--text); line-height:1.02}
-    .hero p.lead{margin:0 0 16px; color:var(--muted)}
-
-    .hero-right{display:flex; flex-direction:column; gap:14px; align-items:center; justify-content:center}
-    .headshot{
-      width:220px; height:220px; border-radius:18px; overflow:hidden; border:3px solid rgba(255,255,255,0.03); box-shadow:0 18px 46px rgba(3,10,25,0.7);
-    }
-
-    /* ---------- SECTIONS ---------- */
+    /* sections */
     section{margin-top:28px}
-    .section-title{font-size:20px; color:var(--text); margin-bottom:12px}
+    .section-title{font-size:20px;color:var(--accent);margin-bottom:12px}
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
-      border-radius:12px; padding:18px;
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 8px 30px rgba(3,10,25,0.6);
-      transition:transform .18s, box-shadow .18s;
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 8px 30px rgba(0,0,0,0.6); transition:transform .18s,box-shadow .18s;
     }
-    .card:hover{transform:translateY(-6px); box-shadow: 0 20px 60px rgba(3,10,25,0.75);}
+    .card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.75)}
+    .section-box{max-width:900px;margin:auto;margin-bottom:40px; padding:20px}
 
-    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    .info-box{display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center}
-    .info-box img{border-radius:10px; max-height:360px; object-fit:cover}
+    /* compact images (centered) */
+    .compact-img{width:75%; margin:12px auto;border-radius:12px;object-fit:cover; display:block}
 
-    /* skills */
-    .skill-row{margin-bottom:12px}
-    .skill-label{display:flex; justify-content:space-between; margin-bottom:6px; color:var(--muted); font-size:14px}
-    .progress-bar{height:12px; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02)}
-    .progress{height:100%; width:0%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); transition:width 1s cubic-bezier(.2,.9,.3,1)}
+    /* grid */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
-    /* activities / sports images */
-    .media-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    /* skill rings container */
+    .skills-grid{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;margin-top:18px}
+    .skill-block{display:flex;flex-direction:column;align-items:center;gap:8px;width:160px}
+
+    /* circular ring canvas wrapper */
+    .ring-wrap{width:140px;height:140px;position:relative}
+    .ring-label{position:absolute;left:0;right:0;top:48%;transform:translateY(-50%);text-align:center;font-weight:700;color:var(--text)}
+    .ring-sub{position:absolute;left:0;right:0;top:64%;transform:translateY(-50%);text-align:center;font-size:13px;color:var(--muted)}
+
+    /* progress bars */
+    .progress-container{width:100%;margin-top:12px}
+    .progress-row{margin-bottom:12px}
+    .skill-label{display:flex;justify-content:space-between;color:var(--muted);font-weight:600;font-size:14px}
+    .progress-bar{background:rgba(255,255,255,0.03);height:14px;border-radius:999px;overflow:hidden}
+    .bar-fill{width:0%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(30,84,242,0.12);transition:width 1.4s cubic-bezier(.2,.9,.3,1)}
+
+    /* icons in skill blocks */
+    .skill-ico{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);color:var(--accent);font-weight:700}
 
     /* contact icons */
-    .contact-icons{display:flex; gap:16px; align-items:center; justify-content:center; margin-top:8px}
-    .contact-icons a{width:46px;height:46px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:var(--glass); color:var(--accent); font-size:18px; border:1px solid rgba(255,255,255,0.02)}
+    .contact-icons{display:flex;gap:12px;justify-content:center;margin-top:12px}
+    .contact-icons a{width:46px;height:46px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:var(--glass);color:var(--accent);font-size:18px}
 
-    /* footer */
-    footer{margin-top:40px; padding:32px 0; text-align:center; color:var(--muted); font-size:13px}
-
-    /* ---------- ANIMATIONS ---------- */
-    .fade-up{opacity:0; transform:translateY(10px); transition:opacity .7s ease, transform .7s ease}
-    .fade-up.visible{opacity:1; transform:translateY(0)}
-    .stagger{transition-delay:0.05s}
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width:1000px){
+    /* small screens */
+    @media (max-width:920px){
       .hero{grid-template-columns:1fr 260px}
       .headshot{width:180px;height:180px}
     }
-    @media (max-width:800px){
-      .nav-wrap{padding:10px}
-      nav .links{display:none}
-      .hamb{display:inline-flex}
-      .container{margin-top:88px}
-      .hero{grid-template-columns:1fr; padding-bottom:6px}
-      .hero-right{order:-1; align-items:center}
-      .grid-2, .media-grid{grid-template-columns:1fr}
-      .hero h1{font-size:28px}
+    @media (max-width:780px){
+      .nav-links{display:none}
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:-1}
+      .grid-2,.media-grid{grid-template-columns:1fr}
+      .compact-img{width:92%}
     }
 
-    /* small polished touches */
-    .muted{color:var(--muted); font-size:14px}
+    /* simple fade reveal */
+    .fade{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+    .fade.visible{opacity:1;transform:translateY(0)}
   </style>
 </head>
-<body>
 
+<body>
   <!-- NAV -->
-  <header class="nav-wrap" role="banner" aria-label="Top navigation">
+  <nav role="navigation" aria-label="Top Navigation">
     <div class="brand">
-      <div class="avatar-brand" style="display:flex;flex-direction:column;align-items:flex-start">
-        <div class="avatar" style="width:44px;height:44px;border-radius:10px;overflow:hidden">
-          <img src="n.png" alt="Zidan" style="width:100%;height:100%;object-fit:cover">
-        </div>
-      </div>
+      <div class="avatar"><img src="n.png" alt="Zidan" style="width:100%;height:100%;object-fit:cover"></div>
       <div>
         <h4>Muntasir Raihan Zidan</h4>
-        <p class="muted" style="margin-top:2px">4th year • Structural Engineering • IUT</p>
+        <p style="margin:0;color:var(--muted);font-size:12px">4th year • Transportation Engineering • IUT</p>
       </div>
     </div>
 
-    <nav aria-label="Main navigation">
-      <div class="links" role="navigation" aria-hidden="false">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#activities">Activities</a>
-        <a href="#sports">Sports</a>
-        <a href="#contact" class="cta">Contact <i class="fas fa-paper-plane" style="margin-left:8px;font-size:12px"></i></a>
-      </div>
+    <div class="nav-links" role="menubar" aria-label="Main Links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#activities">Activities</a>
+      <a href="#sports">Sports</a>
+      <a href="#contact" class="cta">Contact <i class="fas fa-paper-plane" style="margin-left:8px;font-size:12px"></i></a>
+    </div>
+  </nav>
 
-      <div class="hamb" id="hambBtn" aria-label="Open menu" title="Menu">
-        <i class="fas fa-bars" style="color:var(--accent)"></i>
-      </div>
-    </nav>
-  </header>
-
-  <!-- MAIN CONTAINER -->
+  <!-- MAIN -->
   <main class="container" role="main">
-
     <!-- HERO -->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-card fade-up" id="heroContent">
+    <section class="hero fade" id="home">
+      <div class="hero-card">
         <h1>Hi, I'm <span style="color:var(--accent)">Muntasir Raihan Zidan</span></h1>
-        <p class="lead muted">Fourth-year Civil & Environmental Engineering student at IUT. President — ACI IUT · President — Lakshmipur Math Club · Captain — IUT CEE Volleyball Team.</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <p class="lead muted">Fourth-year Civil & Environmental Engineering student specializing in <strong>Transportation Engineering</strong>. President — ACI IUT · President — Lakshmipur Math Club · <strong>Captain of the IUT CEE Volleyball Team</strong>.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
           <a class="cta" href="#projects">View Projects</a>
-          <a style="background:transparent; border-radius:10px; padding:8px 12px; color:var(--muted); border:1px solid rgba(255,255,255,0.02)" href="#contact">Contact Me</a>
+          <a style="background:transparent;border-radius:10px;padding:8px 12px;border:1px solid rgba(255,255,255,0.04);color:var(--muted)" href="#contact">Contact</a>
         </div>
       </div>
 
       <div class="hero-right">
-        <div class="headshot card fade-up" id="headshotWrap">
-          <img src="n.png" alt="Muntasir Raihan Zidan" style="width:100%; height:100%; object-fit:cover;">
+        <div class="headshot card">
+          <img src="n.png" alt="Muntasir Raihan Zidan" style="width:100%;height:100%;object-fit:cover">
         </div>
-        <div class="card muted" style="text-align:center; padding:12px 14px; font-size:14px">Aspiring structural engineer • Sustainable design • Simulation & analysis</div>
+        <div class="card" style="text-align:center;color:var(--muted)">Aspiring transportation engineer • Mobility planning • SUMO simulations</div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="fade-up" aria-labelledby="aboutTitle">
-      <div class="card">
-        <h3 id="aboutTitle" class="section-title section-title--large">About Me</h3>
-        <p class="muted" style="margin-bottom:12px">I am a <strong>fourth-year</strong> student at the Islamic University of Technology (IUT), focusing on Structural Engineering. I enjoy sustainable structures, material innovation and simulation-based workflows. I lead student organizations, organize events, and mentor juniors.</p>
-        <div style="display:flex; gap:18px; flex-wrap:wrap">
+    <section id="about" class="fade" aria-labelledby="aboutTitle">
+      <div class="section-box card" id="aboutBox">
+        <h2 id="aboutTitle" class="section-title">About Me</h2>
+        <p style="color:var(--muted)">I am a <strong>fourth-year</strong> student at the Islamic University of Technology (IUT), specializing in <strong>Transportation Engineering</strong>. I enjoy mobility planning, traffic simulation, and sustainable transport systems. I lead student organizations, organize events, and mentor juniors.</p>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:14px">
           <div style="min-width:180px">
             <strong>Roles</strong>
-            <div class="muted">President — ACI IUT Student Chapter<br>President — Lakshmipur Math Club<br>Captain — IUT CEE Volleyball Team</div>
+            <div style="color:var(--muted);margin-top:6px">President — ACI IUT Student Chapter<br>President — Lakshmipur Math Club<br>Captain — IUT CEE Volleyball Team</div>
           </div>
           <div style="min-width:220px">
             <strong>Tools & Interests</strong>
-            <div class="muted">AutoCAD · SUMO · ETABS (learning) · Abaqus (learning) · Python basics · MS Office</div>
+            <div style="color:var(--muted);margin-top:6px">SUMO · AutoCAD · ETABS (learning) · Abaqus (learning) · Python basics · MS Office</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="fade-up">
-      <h3 class="section-title">My Projects</h3>
+    <section id="projects" class="fade">
+      <h2 class="section-title">My Projects</h2>
       <div class="grid-2">
-        <div class="card info-box">
-          <div class="proj-img"><img src="Floorplan.png" alt="Floorplan"></div>
-          <h4 style="margin:6px 0 0">Building Design with AutoCAD</h4>
-          <p class="muted">Full building plan — floorplans, sections & elevations. Focused on practical detailing and constructability.</p>
+        <div class="card section-box">
+          <h3 style="margin:6px 0 0">Building Design with AutoCAD</h3>
+          <p style="color:var(--muted)">Full building plan — floorplans, sections & elevations with attention to constructability.</p>
+          <img src="Floorplan.png" alt="Floorplan" class="compact-img">
         </div>
-        <div class="card info-box">
-          <div class="proj-img"><img src="slab reinforcement.png" alt="Slab reinforcement"></div>
-          <h4 style="margin:6px 0 0">RCC Slab & Beam Design</h4>
-          <p class="muted">Modeling and detailing of RCC slab & beam structures, reinforcement layout and conceptual checks.</p>
+
+        <div class="card section-box">
+          <h3 style="margin:6px 0 0">RCC Slab & Beam Design</h3>
+          <p style="color:var(--muted)">RCC reinforcement layout and design checks for slabs and beams.</p>
+          <img src="slab reinforcement.png" alt="RCC Slab" class="compact-img">
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="fade-up">
-      <h3 class="section-title">Skills & Expertise</h3>
-      <div class="card">
-        <div class="skill-row">
-          <div class="skill-label"><span>AutoCAD</span><span class="muted">60%</span></div>
-          <div class="progress-bar"><div class="progress" data-progress="60"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label"><span>Abaqus</span><span class="muted">40%</span></div>
-          <div class="progress-bar"><div class="progress" data-progress="40"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label"><span>SUMO</span><span class="muted">70%</span></div>
-          <div class="progress-bar"><div class="progress" data-progress="70"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label"><span>MS Word</span><span class="muted">85%</span></div>
-          <div class="progress-bar"><div class="progress" data-progress="85"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label"><span>MS Excel</span><span class="muted">80%</span></div>
-          <div class="progress-bar"><div class="progress" data-progress="80"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-label"><span>MS PowerPoint</span><span class="muted">75%</span></div>
-          <div class="progress-bar"><div class="progress" data-progress="75"></div></div>
+    <section id="skills" class="fade">
+      <h2 class="section-title">Skills & Expertise</h2>
+
+      <!-- Circular Rings (Engineering Software category) -->
+      <div style="text-align:center;color:var(--muted);margin-bottom:8px">Engineering Software</div>
+      <div class="skills-grid" id="ringGrid">
+        <!-- Skill blocks will be populated by JS -->
+      </div>
+
+      <!-- Horizontal progress bars grouped (Productivity Tools) -->
+      <div style="margin-top:24px;max-width:760px;margin-left:auto;margin-right:auto" class="card">
+        <h4 style="margin:0 0 12px">Productivity & Office</h4>
+        <div class="progress-container">
+          <div class="progress-row">
+            <div class="skill-label"><span>MS Word</span><span class="muted">85%</span></div>
+            <div class="progress-bar"><div class="bar-fill" data-target="85"></div></div>
+          </div>
+
+          <div class="progress-row">
+            <div class="skill-label"><span>MS Excel</span><span class="muted">80%</span></div>
+            <div class="progress-bar"><div class="bar-fill" data-target="80"></div></div>
+          </div>
+
+          <div class="progress-row">
+            <div class="skill-label"><span>MS PowerPoint</span><span class="muted">75%</span></div>
+            <div class="progress-bar"><div class="bar-fill" data-target="75"></div></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ACTIVITIES -->
-    <section id="activities" class="fade-up">
-      <h3 class="section-title">Extracurricular Activities</h3>
+    <section id="activities" class="fade">
+      <h2 class="section-title">Extracurricular Activities</h2>
       <div class="grid-2">
-        <div class="card info-box">
-          <img src="Math Club.jpg" alt="Math Club" style="border-radius:10px;max-height:300px;object-fit:cover">
+        <div class="card section-box">
           <h4>Lakshmipur Math Club</h4>
-          <p class="muted">Organizing Olympiads, Rubik's Cube events and seminars — outreach to 1000+ students.</p>
+          <p style="color:var(--muted)">Organizing Olympiads, Rubik's Cube events, and math seminars — outreach to 1000+ students.</p>
+          <img src="Math Club.jpg" alt="Math Club" class="compact-img">
         </div>
-        <div class="card info-box">
-          <img src="aci.jpg" alt="ACI IUT" style="border-radius:10px;max-height:300px;object-fit:cover">
+
+        <div class="card section-box">
           <h4>ACI IUT Student Chapter</h4>
-          <p class="muted">Workshops, seminars & quizzes on concrete technology and structural practice.</p>
+          <p style="color:var(--muted)">Workshops, seminars & quizzes focused on concrete technology and structural practice.</p>
+          <img src="aci.jpg" alt="ACI IUT" class="compact-img">
         </div>
       </div>
     </section>
 
     <!-- SPORTS -->
-    <section id="sports" class="fade-up">
-      <h3 class="section-title">Sports & Achievements</h3>
+    <section id="sports" class="fade">
+      <h2 class="section-title">Sports & Achievements</h2>
       <div class="media-grid">
-        <div class="card">
-          <img src="Volleyball.jpeg" alt="Volleyball" style="border-radius:10px;max-height:360px;object-fit:cover">
-          <h4 style="margin-top:12px">Volleyball — Captain</h4>
-          <p class="muted">Captain of the IUT CEE Volleyball Team — training, strategy and tournaments.</p>
+        <div class="card section-box">
+          <h4>Volleyball — Captain</h4>
+          <p style="color:var(--muted)">Captain of the IUT CEE Volleyball Team — training, strategy, and tournaments.</p>
+          <img src="Volleyball.jpeg" alt="Volleyball" class="compact-img">
         </div>
-        <div class="card">
-          <img src="Basketball.jpeg" alt="Basketball" style="border-radius:10px;max-height:360px;object-fit:cover">
-          <h4 style="margin-top:12px">Basketball</h4>
-          <p class="muted">Member of the CEE Basketball Team — active competitor in inter-department events.</p>
+
+        <div class="card section-box">
+          <h4>Basketball</h4>
+          <p style="color:var(--muted)">Member of the CEE Basketball Team — active competitor in inter-department events.</p>
+          <img src="Basketball.jpeg" alt="Basketball" class="compact-img">
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="fade-up">
-      <h3 class="section-title">Contact</h3>
-      <div class="card" style="text-align:center">
+    <section id="contact" class="fade">
+      <h2 class="section-title">Contact</h2>
+      <div class="card section-box" style="text-align:center">
         <div class="contact-icons">
           <a href="https://www.facebook.com/muntasir.raihan.7" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="tel:+8801856491451" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
           <a href="https://www.linkedin.com/in/muntasir-raihan-zidan-882346206" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
-        <div class="muted" style="margin-top:12px">Or email: <strong style="color:var(--accent)">raihanmuntasir00@gmail.com</strong></div>
+        <div style="color:var(--muted);margin-top:12px">Or email: <strong style="color:var(--accent)">raihanmuntasir00@gmail.com</strong></div>
       </div>
     </section>
 
-    <footer>
-      &copy; 2024 Muntasir Raihan Zidan — All rights reserved.
-    </footer>
-
+    <footer style="text-align:center;margin-top:40px;color:var(--muted)">© 2024 Muntasir Raihan Zidan — All rights reserved.</footer>
   </main>
 
-  <!-- ---------- Scripts for animations & progress bars ---------- -->
+  <!-- Scripts: rings, counters, reveal, progress -->
   <script>
-    // Mobile menu toggle (shows/hides nav links)
-    const hamb = document.getElementById('hambBtn');
-    if (hamb) {
-      hamb.addEventListener('click', () => {
-        const links = document.querySelector('.links');
-        if (links) links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
-      });
+    // ======== Data: recommended skills (category: Engineering Software) ========
+    const ringSkills = [
+      { name: "AutoCAD", value: 60, colorFrom: "#005eff", colorTo: "#4da3ff", icon: "A" },
+      { name: "ETABS", value: 40, colorFrom: "#005eff", colorTo: "#4da3ff", icon: "E" },
+      { name: "SUMO", value: 70, colorFrom: "#005eff", colorTo: "#4da3ff", icon: "S" },
+      { name: "Abaqus", value: 40, colorFrom: "#005eff", colorTo: "#4da3ff", icon: "Ab" },
+    ];
+
+    // ======== Utility: create ring HTML structure ========
+    function createRingBlock(skill) {
+      const block = document.createElement('div');
+      block.className = 'skill-block';
+
+      const ringWrap = document.createElement('div');
+      ringWrap.className = 'ring-wrap';
+      // canvas for ring
+      const canvas = document.createElement('canvas');
+      canvas.width = 140; canvas.height = 140;
+      canvas.style.width = '140px'; canvas.style.height = '140px';
+      // label overlay
+      const label = document.createElement('div');
+      label.className = 'ring-label';
+      label.innerText = skill.value + '%';
+      // sub label name
+      const sub = document.createElement('div');
+      sub.className = 'ring-sub';
+      sub.innerText = skill.name;
+
+      // icon small (top-left)
+      const ico = document.createElement('div');
+      ico.className = 'skill-ico';
+      ico.style.position = 'absolute';
+      ico.style.left = '8px';
+      ico.style.top = '8px';
+      ico.style.fontSize = '12px';
+      ico.innerText = skill.icon;
+
+      ringWrap.appendChild(canvas);
+      ringWrap.appendChild(label);
+      ringWrap.appendChild(sub);
+      ringWrap.appendChild(ico);
+      block.appendChild(ringWrap);
+
+      return { block, canvas, label, sub };
     }
 
-    // IntersectionObserver for fade-up elements & progress bars
-    document.addEventListener('DOMContentLoaded', () => {
-      const observerOptions = { threshold: 0.12 };
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
-            // if inside section there are .progress elements, animate them
-            const progresses = entry.target.querySelectorAll('.progress');
-            progresses.forEach(p => {
-              const val = parseInt(p.getAttribute('data-progress') || '0', 10);
-              p.style.width = val + '%';
-            });
-          }
-        });
-      }, observerOptions);
+    // ======== Drawing thick ring with glow and animating ========
+    function animateRing(canvas, value, colors) {
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
+      const cx = W/2, cy = H/2, radius = 52;
+      const thickness = 14;
+      const bgColor = 'rgba(255,255,255,0.04)';
+      let progress = 0; // 0..value
+      const duration = 1400; // ms
+      const start = performance.now();
 
-      // watch hero, sections and cards
-      document.querySelectorAll('.fade-up, .card, section').forEach(el => observer.observe(el));
-      // also animate progress bars in case skills section already visible
-      document.querySelectorAll('.progress').forEach(p => {
-        const v = parseInt(p.getAttribute('data-progress') || '0', 10);
-        // small delay for nicer effect
-        setTimeout(() => p.style.width = v + '%', 700);
+      function draw(p) {
+        ctx.clearRect(0,0,W,H);
+        // background ring
+        ctx.beginPath();
+        ctx.lineWidth = thickness;
+        ctx.strokeStyle = bgColor;
+        ctx.lineCap = 'round';
+        ctx.arc(cx,cy,radius, -Math.PI/2, -Math.PI/2 + Math.PI*2);
+        ctx.stroke();
+        ctx.closePath();
+
+        // gradient stroke
+        const endAngle = (-Math.PI/2) + (Math.PI*2) * (p/100);
+        const grad = ctx.createLinearGradient(0,0,W,H);
+        grad.addColorStop(0, colors[0]);
+        grad.addColorStop(1, colors[1]);
+        ctx.beginPath();
+        ctx.lineWidth = thickness;
+        ctx.strokeStyle = grad;
+        ctx.lineCap = 'round';
+        ctx.arc(cx,cy,radius, -Math.PI/2, endAngle);
+        ctx.stroke();
+        ctx.closePath();
+
+        // glow (soft outer)
+        ctx.beginPath();
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(30,84,242,' + (0.08 * (p/100)) + ')';
+        ctx.arc(cx,cy,radius + thickness/2 + 6, -Math.PI/2, endAngle);
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      function tick(now) {
+        const t = Math.min(1, (now - start) / duration);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - t, 3);
+        progress = eased * value;
+        draw(progress);
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // ======== Initialize Rings into DOM ========
+    const ringGrid = document.getElementById('ringGrid');
+    ringSkills.forEach(skill => {
+      const { block, canvas } = createRingBlock(skill);
+      ringGrid.appendChild(block);
+
+      // save for later animation
+      canvas.dataset.value = skill.value;
+      canvas.dataset.c0 = skill.colorFrom;
+      canvas.dataset.c1 = skill.colorTo;
+      canvas.classList.add('ring-canvas');
+    });
+
+    // ======== Intersection observer to trigger animations once in view ========
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // animate any ring canvases inside
+          const canvases = entry.target.querySelectorAll('.ring-canvas');
+          canvases.forEach(c => {
+            const v = parseInt(c.dataset.value || '0', 10);
+            const c0 = c.dataset.c0 || '#005eff';
+            const c1 = c.dataset.c1 || '#4da3ff';
+            animateRing(c, v, [c0, c1]);
+            // animate label counter
+            const label = c.parentElement.querySelector('.ring-label');
+            animateCounter(label, v);
+          });
+          // animate progress bars inside
+          const bars = entry.target.querySelectorAll('.bar-fill');
+          bars.forEach(b => {
+            const target = parseInt(b.dataset.target || '0', 10);
+            setTimeout(() => { b.style.width = target + '%'; }, 200);
+          });
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // observe the skills section and the cards
+    document.querySelectorAll('.fade, section, .card').forEach(el => observer.observe(el));
+
+    // ======== Percentage counter for ring label ========
+    function animateCounter(labelEl, target) {
+      if (!labelEl) return;
+      let start = null;
+      const duration = 1200;
+      const initial = 0;
+      function step(ts) {
+        if (!start) start = ts;
+        const t = Math.min(1, (ts - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        const val = Math.round(initial + (target - initial) * eased);
+        labelEl.innerText = val + '%';
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    // ======== Also animate rings when ringGrid scrolls into view (safety) ========
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) observer.observe(skillsSection);
+
+    // ======== Smooth navigation for anchor links ========
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
 
-    // Smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // ======== Small helper: reveal fade elements as they enter viewport ========
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
       });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade').forEach(el => fadeObserver.observe(el));
+
+    // ======== Ensure ring canvases resize on mobile / high-DPI ========
+    function scaleCanvasForDPI(canvas) {
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round(rect.height * dpr);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.scale(dpr, dpr);
+    }
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.ring-canvas').forEach(c => scaleCanvasForDPI(c));
+    });
+
+    // run initial scale for canvases
+    document.querySelectorAll('.ring-canvas').forEach(c => scaleCanvasForDPI(c));
+
+    // ======== Fallback: if images missing, lighten with placeholder color (graceful) ========
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        img.style.background = 'linear-gradient(180deg,#0d1726,#081027)';
+        img.style.minHeight = '120px';
+      });
+    });
+
+    // ======== Accessibility: Enter key navigation for anchors ========
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('keyup', e => { if (e.key === 'Enter') link.click(); });
     });
   </script>
 </body>
