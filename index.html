@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muntasir Raihan Zidan — Portfolio</title>
-  <meta name="description" content="Hi, I'm Muntasir Raihan Zidan — Transportation & Civil Engineer, M.Sc. Researcher at IUT, Community Leader & Athlete." />
+  <meta name="description" content="Muntasir Raihan Zidan — Transportation Engineer & Computer Vision Researcher — IUT '26." />
 
-  <!-- Google Fonts: Poppins (from original site), Plus Jakarta Sans, JetBrains Mono & Noto Sans Bengali -->
+  <!-- Google Fonts: Syne, Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,19 +21,18 @@
       theme: {
         extend: {
           colors: {
-            midnight: '#040711',
-            panel: '#0b1124',
-            royal: '#1e54f2',
-            royalLight: '#3b82f6',
-            skyAccent: '#38bdf8',
-            warmAmber: '#f59e0b',
-            emeraldFresh: '#10b981'
+            obsidian: '#050505',
+            surface: '#0C0D10',
+            surfaceHover: '#13151B',
+            cobalt: '#2563EB',
+            skyGlow: '#38BDF8',
+            amberGlow: '#F97316',
+            emeraldGlow: '#10B981'
           },
           fontFamily: {
-            poppins: ['"Poppins"', 'sans-serif'],
+            syne: ['"Syne"', 'sans-serif'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-            bengali: ['"Noto Sans Bengali"', 'sans-serif']
+            mono: ['"JetBrains Mono"', 'monospace']
           }
         }
       }
@@ -42,10 +41,10 @@
 
   <style>
     :root {
-      --bg: #040711;
-      --accent: #1e54f2;
-      --accent-2: #3b82f6;
-      --warm: #f59e0b;
+      --bg: #050505;
+      --cobalt: #2563EB;
+      --amber: #F97316;
+      --sky: #38BDF8;
     }
 
     * {
@@ -54,127 +53,168 @@
 
     body {
       margin: 0;
-      background-color: var(--bg);
-      color: #e8effc;
-      font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+      background-color: #050505;
+      color: #F4F5F8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle Studio Grid Background */
+    .bg-studio-grid {
+      background-size: 56px 56px;
       background-image:
-        radial-gradient(900px 500px at 10% 8%, rgba(30, 84, 242, 0.14), transparent 70%),
-        radial-gradient(850px 500px at 90% 25%, rgba(56, 189, 248, 0.08), transparent 65%),
-        radial-gradient(900px 600px at 50% 92%, rgba(245, 158, 11, 0.06), transparent 70%);
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     }
 
-    /* Warm, tactile glass surface evolved from original portfolio */
-    .zidan-card {
-      background: linear-gradient(165deg, rgba(17, 25, 48, 0.82) 0%, rgba(10, 15, 30, 0.72) 100%);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    /* Spotlight Border Card */
+    .studio-card {
+      position: relative;
+      background: #0B0C0E;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .zidan-card:hover {
-      border-color: rgba(59, 130, 246, 0.4);
-      box-shadow: 0 22px 55px rgba(30, 84, 242, 0.18);
-    }
-
-    /* 3D Tilt Card Effect */
-    .tilt-card {
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-
-    /* Polaroid Scrapbook Frame for Photos */
-    .polaroid-frame {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 10px 10px 14px 10px;
-      border-radius: 18px;
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.65);
-      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .polaroid-frame:hover {
-      transform: translateY(-6px) rotate(0deg) !important;
-      border-color: rgba(56, 189, 248, 0.45);
-      box-shadow: 0 24px 60px rgba(30, 84, 242, 0.25);
-    }
-
-    /* Smooth Scroll Reveal */
-    .fade-up {
+    .studio-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(37, 99, 235, 0.13),
+        transparent 40%
+      );
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    .fade-up.visible {
+    .studio-card:hover::before {
+      opacity: 1;
+    }
+
+    .studio-card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Custom Dual-Ring Magnetic Cursor (Desktop) */
+    #cursorDot, #cursorRing {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    #cursorDot {
+      width: 7px;
+      height: 7px;
+      background: #F97316;
+      transition: transform 0.15s ease;
+    }
+
+    #cursorRing {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid rgba(255, 255, 255, 0.32);
+      transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.25s ease,
+                  background-color 0.25s ease;
+    }
+
+    #cursorRing.cursor-active {
+      width: 58px;
+      height: 58px;
+      border-color: #F97316;
+      background-color: rgba(249, 115, 22, 0.08);
+    }
+
+    /* Hero Split-Character Animation */
+    .hero-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(36px) rotateX(-35deg);
+      animation: charReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+      will-change: transform, color;
+    }
+
+    @keyframes charReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Custom Cursor Follower Glow (Desktop) */
-    #cursorGlow {
-      position: fixed;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(30, 84, 242, 0.11) 0%, transparent 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      transition: opacity 0.3s ease;
+    /* Infinite Velocity Marquee */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
     }
 
-    /* Progress Bar Animation */
-    .bar-fill {
+    /* Progress Bar Fill */
+    .skill-bar-fill {
       width: 0%;
-      transition: width 1.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-    }
-
-    /* Subtle Floating Animation */
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-7px); }
-    }
-    .float-slow {
-      animation: floatSlow 5s ease-in-out infinite;
+      transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
-      width: 9px;
+      width: 7px;
     }
     ::-webkit-scrollbar-track {
-      background: #040711;
+      background: #050505;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 999px;
+      background: #22252E;
+      border-radius: 99px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #1e54f2;
+      background: #2563EB;
     }
   </style>
 </head>
 
-<body class="selection:bg-royal selection:text-white">
+<body class="bg-obsidian bg-studio-grid selection:bg-cobalt selection:text-white">
 
-  <!-- Ambient Mouse Spotlight -->
-  <div id="cursorGlow" class="hidden lg:block"></div>
+  <!-- Dual-Ring Magnetic Cursor -->
+  <div id="cursorDot" class="hidden lg:block"></div>
+  <div id="cursorRing" class="hidden lg:block"></div>
 
-  <!-- Hidden File Input for Quick Single-Photo Click Upload -->
+  <!-- Hidden File Input for Single Photo Upload -->
   <input type="file" id="singlePhotoInput" accept="image/*" class="hidden" />
 
-  <!-- Toast Notification Container (No alert() used) -->
-  <div id="toastContainer" class="fixed bottom-6 right-6 z-[110] flex flex-col gap-2.5 pointer-events-none"></div>
+  <!-- Toast Notification Container (No alert()) -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-[120] flex flex-col gap-2 pointer-events-none"></div>
 
-  <!-- ================= TOP NAVIGATION ================= -->
-  <header class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
-    <nav class="max-w-6xl mx-auto zidan-card rounded-2xl px-4 py-3 flex items-center justify-between border border-white/10" aria-label="Top Navigation">
-      <!-- Brand / Avatar -->
-      <a href="#home" class="flex items-center gap-3 group">
-        <div class="relative w-11 h-11 rounded-xl overflow-hidden border-2 border-royal/50 bg-panel flex-shrink-0 shadow-md">
+  <!-- ================= TOP STUDIO NAVIGATION ================= -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-8">
+    <nav class="max-w-7xl mx-auto bg-[#0A0B0E]/85 backdrop-blur-xl border border-white/10 rounded-full px-5 py-3 flex items-center justify-between shadow-2xl">
+      <!-- Brand -->
+      <a href="#home" class="flex items-center gap-3 group magnetic">
+        <div class="w-9 h-9 rounded-full overflow-hidden border border-white/20 bg-surface flex-shrink-0">
           <img
             src="n.png"
             data-slot="n.png"
@@ -182,1180 +222,958 @@
             class="w-full h-full object-cover"
             onerror="handleImgError(this, 'n.png')"
           />
-          <div class="img-fallback hidden w-full h-full items-center justify-center bg-gradient-to-br from-royal to-skyAccent text-white font-poppins font-bold text-sm">
-            MRZ
+          <div class="img-fallback hidden w-full h-full items-center justify-center bg-cobalt text-white font-syne font-bold text-xs">
+            MZ
           </div>
         </div>
-        <div>
-          <h4 class="font-poppins font-bold text-sm sm:text-base text-white leading-tight group-hover:text-skyAccent transition-colors">
-            Muntasir Raihan Zidan
-          </h4>
-          <p class="text-[11px] text-slate-400">B.Sc. CEE Graduate • M.Sc. Researcher • IUT</p>
-        </div>
+        <span class="font-syne font-extrabold text-sm tracking-wider text-white group-hover:text-amberGlow transition-colors">
+          ZIDAN
+        </span>
       </a>
 
-      <!-- Navigation Links -->
-      <div class="hidden lg:flex items-center gap-1">
-        <a href="#about" class="px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">About</a>
-        <a href="#projects" class="px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">Research &amp; Projects</a>
-        <a href="#skills" class="px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">Skills</a>
-        <a href="#activities" class="px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">Leadership</a>
-        <a href="#sports" class="px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">Sports</a>
-        <a href="#education" class="px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all">Education</a>
+      <!-- Center Links -->
+      <div class="hidden md:flex items-center gap-1">
+        <a href="#focus" class="magnetic px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/5 transition-all">Capabilities</a>
+        <a href="#work" class="magnetic px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/5 transition-all">Selected Work</a>
+        <a href="#skills" class="magnetic px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/5 transition-all">Stack</a>
+        <a href="#bento" class="magnetic px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/5 transition-all">Leadership &amp; Sports</a>
       </div>
 
-      <!-- Right Action Buttons -->
+      <!-- Actions -->
       <div class="flex items-center gap-2">
         <button
-          onclick="togglePhotoStudio()"
-          title="Load your local photos (n.png, aci.jpg, etc.) to preview them live right now!"
-          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium bg-warmAmber/15 hover:bg-warmAmber/25 text-warmAmber border border-warmAmber/30 transition-all"
+          onclick="togglePhotoDrawer()"
+          class="magnetic inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-amberGlow border border-amberGlow/30 transition-all"
         >
-          <i class="fas fa-camera-retro"></i>
+          <i class="fas fa-camera text-[11px]"></i>
           <span class="hidden sm:inline">My Photos</span>
+        </button>
+
+        <button
+          onclick="downloadPortfolio(false)"
+          title="Download index.html"
+          class="magnetic hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10 transition-all"
+        >
+          <i class="fas fa-download text-[11px] text-skyGlow"></i>
+          <span>HTML</span>
         </button>
 
         <a
           href="#contact"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-poppins font-semibold bg-gradient-to-r from-royal to-royalLight hover:from-blue-600 hover:to-skyAccent text-white shadow-lg shadow-royal/25 transition-all"
+          class="magnetic inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-obsidian hover:bg-amberGlow hover:text-obsidian transition-all"
         >
           <span>Contact</span>
-          <i class="fas fa-paper-plane text-[10px]"></i>
+          <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
         </a>
-
-        <button id="mobileNavToggle" aria-label="Menu" class="lg:hidden p-2.5 rounded-xl bg-white/5 text-slate-200 border border-white/10">
-          <i class="fas fa-bars"></i>
-        </button>
       </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileNavMenu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 zidan-card rounded-2xl p-4 border border-white/10">
-      <div class="grid grid-cols-2 gap-2 text-xs font-medium">
-        <a href="#about" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-white/5 text-slate-200">About Me</a>
-        <a href="#projects" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-white/5 text-slate-200">Research &amp; Projects</a>
-        <a href="#skills" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-white/5 text-slate-200">Skills &amp; Software</a>
-        <a href="#activities" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-white/5 text-slate-200">Clubs &amp; Leadership</a>
-        <a href="#sports" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-white/5 text-slate-200">Volleyball &amp; Sports</a>
-        <a href="#education" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-white/5 text-slate-200">Education</a>
-        <button onclick="togglePhotoStudio()" class="px-3 py-2.5 rounded-xl bg-warmAmber/15 text-warmAmber text-left">
-          <i class="fas fa-camera mr-1"></i> Load Local Photos
-        </button>
-        <button onclick="downloadPortfolio(false)" class="px-3 py-2.5 rounded-xl bg-royal/20 text-skyAccent text-left">
-          <i class="fas fa-download mr-1"></i> Save index.html
-        </button>
-      </div>
-    </div>
   </header>
 
-  <!-- ================= COLLAPSIBLE LIVE PHOTO STUDIO DRAWER ================= -->
-  <div id="photoStudioBar" class="hidden fixed top-20 left-0 right-0 z-40 px-3 sm:px-6">
-    <div class="max-w-6xl mx-auto zidan-card rounded-2xl p-4 sm:p-5 border border-warmAmber/40 shadow-2xl">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/10">
+  <!-- ================= COLLAPSIBLE "MY PHOTOS" LIVE LOADER DRAWER ================= -->
+  <div id="photoDrawer" class="hidden fixed top-20 left-0 right-0 z-40 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto studio-card p-5 border border-amberGlow/40 shadow-2xl bg-[#0A0B0E]/95 backdrop-blur-2xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
         <div>
-          <div class="flex items-center gap-2 text-warmAmber font-poppins font-semibold text-sm">
-            <i class="fas fa-images"></i>
-            <span>Live Photo Previewer &amp; Exporter</span>
+          <div class="font-syne font-bold text-sm text-white flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amberGlow"></span>
+            <span>Live Photo Loader &amp; HTML Exporter</span>
           </div>
-          <p class="text-xs text-slate-300 mt-0.5">
-            Your code already links directly to <code class="text-skyAccent">n.png</code>, <code class="text-skyAccent">aci.jpg</code>, <code class="text-skyAccent">Math Club.jpg</code>, <code class="text-skyAccent">Volleyball.jpeg</code>, <code class="text-skyAccent">Basketball.jpeg</code>, <code class="text-skyAccent">Floorplan.png</code>, and <code class="text-skyAccent">slab reinforcement.png</code>. Select them from your computer below to see them live right now!
+          <p class="text-xs text-zinc-400 mt-0.5">
+            Select your local files (<code class="text-skyGlow">n.png</code>, <code class="text-skyGlow">Floorplan.png</code>, <code class="text-skyGlow">slab reinforcement.png</code>, <code class="text-skyGlow">aci.jpg</code>, <code class="text-skyGlow">Math Club.jpg</code>, <code class="text-skyGlow">Volleyball.jpeg</code>, <code class="text-skyGlow">Basketball.jpeg</code>) to preview live.
           </p>
         </div>
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-warmAmber text-midnight font-semibold text-xs hover:bg-amber-400 transition-all">
-            <i class="fas fa-folder-open"></i>
-            <span>Select Multiple Photos at Once</span>
+        <div class="flex items-center gap-2">
+          <label class="cursor-pointer px-4 py-2 rounded-full bg-amberGlow text-obsidian font-semibold text-xs hover:bg-orange-400 transition-all">
+            <i class="fas fa-folder-open mr-1.5"></i>Load Multiple Photos
             <input type="file" id="bulkPhotoInput" multiple accept="image/*" class="hidden" />
           </label>
-          <button onclick="togglePhotoStudio()" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300">
-            <i class="fas fa-times"></i>
+          <button onclick="togglePhotoDrawer()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-zinc-300 flex items-center justify-center">
+            <i class="fas fa-times text-xs"></i>
           </button>
         </div>
       </div>
 
-      <!-- Individual Photo Slot Buttons -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 mt-3 text-[11px]">
-        <button onclick="triggerSinglePhoto('n.png')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">n.png</div>
-          <div class="text-slate-400">My Portrait</div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 mt-4 text-xs">
+        <button onclick="triggerSinglePhoto('n.png')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">n.png</div>
+          <div class="text-[11px] text-zinc-400">Hero Portrait</div>
         </button>
-        <button onclick="triggerSinglePhoto('Floorplan.png')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">Floorplan.png</div>
-          <div class="text-slate-400">AutoCAD Plan</div>
+        <button onclick="triggerSinglePhoto('Floorplan.png')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">Floorplan.png</div>
+          <div class="text-[11px] text-zinc-400">AutoCAD Plan</div>
         </button>
-        <button onclick="triggerSinglePhoto('slab reinforcement.png')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">slab reinforcement.png</div>
-          <div class="text-slate-400">RCC Slab</div>
+        <button onclick="triggerSinglePhoto('slab reinforcement.png')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">slab reinforcement.png</div>
+          <div class="text-[11px] text-zinc-400">RCC Slab</div>
         </button>
-        <button onclick="triggerSinglePhoto('aci.jpg')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">aci.jpg</div>
-          <div class="text-slate-400">ACI IUT Chapter</div>
+        <button onclick="triggerSinglePhoto('aci.jpg')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">aci.jpg</div>
+          <div class="text-[11px] text-zinc-400">ACI IUT</div>
         </button>
-        <button onclick="triggerSinglePhoto('Math Club.jpg')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">Math Club.jpg</div>
-          <div class="text-slate-400">Math Club</div>
+        <button onclick="triggerSinglePhoto('Math Club.jpg')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">Math Club.jpg</div>
+          <div class="text-[11px] text-zinc-400">Math Club</div>
         </button>
-        <button onclick="triggerSinglePhoto('Volleyball.jpeg')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">Volleyball.jpeg</div>
-          <div class="text-slate-400">CEE Volleyball</div>
+        <button onclick="triggerSinglePhoto('Volleyball.jpeg')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">Volleyball.jpeg</div>
+          <div class="text-[11px] text-zinc-400">Volleyball</div>
         </button>
-        <button onclick="triggerSinglePhoto('Basketball.jpeg')" class="p-2 rounded-xl bg-white/5 hover:bg-royal/25 border border-white/10 text-left transition-all">
-          <div class="font-mono text-skyAccent truncate">Basketball.jpeg</div>
-          <div class="text-slate-400">CEE Basketball</div>
+        <button onclick="triggerSinglePhoto('Basketball.jpeg')" class="p-2.5 rounded-xl bg-white/5 hover:bg-cobalt/25 border border-white/10 text-left transition-all">
+          <div class="font-mono text-skyGlow truncate">Basketball.jpeg</div>
+          <div class="text-[11px] text-zinc-400">Basketball</div>
         </button>
       </div>
 
-      <div class="mt-3 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
-        <span class="text-slate-400">Tip: Once you load your photos, you can download <code class="text-white">index.html</code> with photos embedded or linked!</span>
+      <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <span class="text-zinc-400">Export for GitHub Pages or local folder:</span>
         <div class="flex gap-2">
-          <button onclick="downloadPortfolio(false)" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium">
-            <i class="fas fa-code mr-1 text-skyAccent"></i>Download Clean HTML (Uses Folder Filenames)
+          <button onclick="downloadPortfolio(false)" class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white">
+            Download Clean HTML
           </button>
-          <button onclick="downloadPortfolio(true)" class="px-3 py-1.5 rounded-lg bg-royal hover:bg-blue-600 text-white font-medium">
-            <i class="fas fa-file-arrow-down mr-1"></i>Download All-in-One HTML (Photos Embedded)
+          <button onclick="downloadPortfolio(true)" class="px-3.5 py-1.5 rounded-full bg-cobalt hover:bg-blue-600 text-white font-medium">
+            Download HTML with Embedded Photos
           </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ================= MAIN CONTENT CONTAINER ================= -->
-  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-24 space-y-24">
+  <!-- ================= 1. HERO SECTION ================= -->
+  <section id="home" class="relative pt-32 pb-16 px-4 sm:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
-    <!-- ================= 1. HERO SECTION (WARM, PERSONAL & HUMAN) ================= -->
-    <section id="home" class="fade-up">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-
-        <!-- Left 7 Columns: Personal Greeting & Story -->
-        <div class="lg:col-span-7 zidan-card rounded-3xl p-7 sm:p-10 border border-white/10 relative overflow-hidden">
-          <!-- Subtle Ambient Glow -->
-          <div class="absolute -top-24 -left-24 w-64 h-64 bg-royal/20 rounded-full blur-3xl pointer-events-none"></div>
-
-          <div class="relative z-10 space-y-5">
-            <!-- Friendly Status Pill -->
-            <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-royal/15 border border-royalLight/30 text-xs font-medium text-skyAccent">
-              <span class="w-2 h-2 rounded-full bg-emeraldFresh animate-ping"></span>
-              <span>B.Sc. CEE Graduate (IUT '26) &amp; M.Sc. Researcher</span>
-            </div>
-
-            <!-- Warm Greeting -->
-            <div class="space-y-1.5">
-              <h1 class="font-poppins font-bold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-royalLight via-skyAccent to-white">Muntasir Raihan Zidan</span>
-              </h1>
-              <p class="font-bengali text-sm sm:text-base text-slate-400">
-                মুনতাসির রায়হান জিদান &nbsp;·&nbsp; <span class="font-sans text-xs sm:text-sm text-slate-400">Dhaka &amp; Lakshmipur, Bangladesh</span>
-              </p>
-            </div>
-
-            <!-- Dynamic Rotating Personal Identity -->
-            <div class="flex items-center gap-2 text-base sm:text-xl font-poppins font-semibold text-warmAmber h-8">
-              <i class="fas fa-compass text-royalLight text-sm"></i>
-              <span id="heroRoleText">Transportation Engineering Researcher</span>
-              <span class="animate-pulse text-skyAccent">|</span>
-            </div>
-
-            <!-- Authentic First-Person Introduction -->
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I recently graduated with my B.Sc. in <strong>Civil &amp; Environmental Engineering</strong> from the <strong>Islamic University of Technology (IUT)</strong> and I'm currently pursuing my <strong>M.Sc. in Transportation Engineering</strong> at IUT. I love figuring out how cities move—combining <strong>real-time computer vision &amp; video analytics</strong> with microscopic traffic simulations (<strong>SUMO &amp; VISSIM</strong>) to make roads safer and smoother. Beyond engineering, I thrive on leading student communities and competing on the volleyball and basketball courts.
-            </p>
-
-            <!-- Quick Personal Highlights Chips -->
-            <div class="flex flex-wrap gap-2 pt-1 text-xs">
-              <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-slate-200">
-                <i class="fas fa-award text-warmAmber mr-1.5"></i>TRB (Q2 Scopus) Published Author
-              </span>
-              <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-slate-200">
-                <i class="fas fa-users text-skyAccent mr-1.5"></i>President — ACI IUT &amp; Lakshmipur Math Club
-              </span>
-              <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-slate-200">
-                <i class="fas fa-volleyball text-emeraldFresh mr-1.5"></i>Captain — IUT CEE Volleyball Team
-              </span>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap items-center gap-3 pt-3">
-              <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-poppins font-semibold text-sm bg-gradient-to-r from-royal to-royalLight hover:from-blue-600 hover:to-skyAccent text-white shadow-xl shadow-royal/30 transition-all hover:-translate-y-0.5">
-                <span>Explore My Projects</span>
-                <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-              <a href="#activities" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-poppins font-medium text-sm bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all">
-                <i class="fas fa-camera text-warmAmber"></i>
-                <span>Clubs &amp; Sports Gallery</span>
-              </a>
-              <a href="#contact" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-medium text-sm text-slate-300 hover:text-white transition-all">
-                <span>Say Hello</span>
-              </a>
-            </div>
-          </div>
+      <!-- Left 7 Columns: Bold Geometric Display + Punchy 1-Line Copy -->
+      <div class="lg:col-span-7 space-y-6">
+        <!-- Quick Pill Badges -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 font-mono text-xs text-zinc-200">
+            B.Sc. CEE <strong class="text-skyGlow">3.69/4.00</strong>
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 font-mono text-xs text-zinc-200">
+            M.Sc. CEE @ IUT
+          </span>
+          <span class="px-3 py-1 rounded-full bg-amberGlow/15 border border-amberGlow/35 font-mono text-xs text-amberGlow">
+            TRB Q2 Published
+          </span>
         </div>
 
-        <!-- Right 5 Columns: Personal Portrait Card (`n.png`) -->
-        <div class="lg:col-span-5 flex flex-col items-center">
-          <div class="w-full max-w-sm polaroid-frame tilt-card relative group">
-            <!-- Photo Container -->
-            <div class="relative aspect-[4/4.3] w-full rounded-xl overflow-hidden bg-panel border border-white/10">
-              <img
-                src="n.png"
-                data-slot="n.png"
-                alt="Muntasir Raihan Zidan"
-                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-                onclick="openLightbox(this.src, 'Muntasir Raihan Zidan — B.Sc. & M.Sc. in Civil & Environmental Engineering, IUT')"
-                onerror="handleImgError(this, 'n.png')"
-              />
+        <!-- Hero Geometric Display Name with Interactive Proximity Glow -->
+        <h1
+          id="heroDisplayTitle"
+          class="font-syne font-extrabold text-4xl sm:text-6xl xl:text-[68px] leading-[0.96] tracking-tight text-white select-none"
+          aria-label="MUNTASIR RAIHAN ZIDAN"
+        >
+          <!-- Populated by JS for split-character reveal & proximity interaction -->
+          MUNTASIR RAIHAN ZIDAN
+        </h1>
 
-              <!-- Warm Interactive Photo Placeholder (Only shown if n.png isn't in preview yet) -->
-              <div class="img-fallback hidden w-full h-full flex-col items-center justify-between p-6 bg-gradient-to-b from-[#111c38] via-[#0d152b] to-[#070b17] text-center">
-                <span class="px-3 py-1 rounded-full bg-royal/20 border border-skyAccent/30 text-[11px] font-mono text-skyAccent">
-                  Portrait • n.png
-                </span>
+        <!-- Crisp 1-Line Subtitle -->
+        <p class="text-lg sm:text-2xl font-medium text-zinc-300 max-w-xl leading-snug">
+          Transportation Engineer &amp; Computer Vision Researcher — <span class="text-white font-semibold">IUT '26</span>.
+        </p>
 
-                <div class="my-auto space-y-3">
-                  <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-royal to-skyAccent p-1 shadow-xl shadow-royal/30">
-                    <div class="w-full h-full rounded-full bg-midnight flex items-center justify-center text-2xl font-poppins font-bold text-white">
-                      Zidan
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="font-poppins font-bold text-lg text-white">Muntasir Raihan Zidan</h3>
-                    <p class="text-xs text-slate-400 mt-0.5">Linked to <code class="text-skyAccent">n.png</code> in your folder</p>
-                  </div>
-                  <button
-                    onclick="triggerSinglePhoto('n.png')"
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-warmAmber text-midnight font-semibold text-xs hover:bg-amber-400 transition-all shadow-lg"
-                  >
-                    <i class="fas fa-upload"></i>
-                    <span>Click to Load Your n.png Photo</span>
-                  </button>
-                </div>
+        <!-- Action Row -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a
+            href="#work"
+            class="magnetic inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-syne font-bold text-xs uppercase tracking-wider bg-cobalt hover:bg-blue-500 text-white shadow-lg shadow-cobalt/30 transition-all"
+          >
+            <span>Selected Work</span>
+            <i class="fas fa-arrow-down text-[11px]"></i>
+          </a>
+          <a
+            href="#bento"
+            class="magnetic inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-syne font-bold text-xs uppercase tracking-wider bg-white/5 hover:bg-white/10 text-white border border-white/15 transition-all"
+          >
+            <span>Leadership &amp; Sports</span>
+          </a>
+        </div>
 
-                <p class="text-[11px] text-slate-400">
-                  When placed in your portfolio folder, <code class="text-slate-200">n.png</code> displays automatically!
-                </p>
+        <!-- Clean Metrics Bar -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg">
+          <div>
+            <div class="font-mono font-semibold text-2xl sm:text-3xl text-white">3.69</div>
+            <div class="text-xs text-zinc-400">B.Sc. CGPA / 4.00</div>
+          </div>
+          <div>
+            <div class="font-mono font-semibold text-2xl sm:text-3xl text-amberGlow">Q2</div>
+            <div class="text-xs text-zinc-400">TRB Scopus Paper</div>
+          </div>
+          <div>
+            <div class="font-mono font-semibold text-2xl sm:text-3xl text-skyGlow">5.00</div>
+            <div class="text-xs text-zinc-400">HSC &amp; SSC GPA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 5 Columns: Studio Rim-Lit Portrait (`n.png`) with 3D Tilt & Rim-Light Canvas -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div
+          id="heroPortraitCard"
+          class="relative w-full max-w-[390px] aspect-[4/4.6] rounded-[28px] p-[2px] transition-transform duration-200 ease-out"
+          style="transform-style: preserve-3d;"
+        >
+          <!-- Animated Rim-Light Aura Shader Canvas Behind Portrait -->
+          <canvas
+            id="rimLightCanvas"
+            class="absolute -inset-3 w-[calc(100%+24px)] h-[calc(100%+24px)] rounded-[34px] blur-xl opacity-75 pointer-events-none"
+          ></canvas>
+
+          <!-- Clean Unobstructed Portrait Card -->
+          <div class="relative w-full h-full rounded-[26px] overflow-hidden bg-[#0B0D13] border border-white/15 shadow-2xl group">
+            <img
+              src="n.png"
+              data-slot="n.png"
+              alt="Muntasir Raihan Zidan"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+              onclick="openLightbox(this.src, 'Muntasir Raihan Zidan — B.Sc. & M.Sc. CEE, IUT')"
+              onerror="handleImgError(this, 'n.png')"
+            />
+
+            <!-- Minimal Studio Fallback if n.png isn't loaded locally yet -->
+            <div class="img-fallback hidden w-full h-full flex-col items-center justify-between p-7 bg-gradient-to-b from-[#111729] via-[#0B0D14] to-[#060709] text-center">
+              <div class="w-full flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                <span>PORTRAIT</span>
+                <span class="text-skyGlow">n.png</span>
               </div>
 
-              <!-- Quick Camera Button on Hover to Swap Photo Anytime -->
+              <div class="my-auto space-y-4">
+                <div class="w-28 h-28 mx-auto rounded-full bg-gradient-to-tr from-cobalt via-skyGlow to-amberGlow p-[2px]">
+                  <div class="w-full h-full rounded-full bg-obsidian flex items-center justify-center font-syne font-extrabold text-2xl text-white">
+                    ZIDAN
+                  </div>
+                </div>
+                <div>
+                  <div class="font-syne font-bold text-lg text-white">Muntasir Raihan Zidan</div>
+                  <div class="text-xs text-zinc-400 mt-0.5">Click below to preview your <code class="text-skyGlow">n.png</code></div>
+                </div>
+                <button
+                  onclick="triggerSinglePhoto('n.png')"
+                  class="px-4 py-2 rounded-full bg-white text-obsidian font-semibold text-xs hover:bg-amberGlow transition-all"
+                >
+                  <i class="fas fa-camera mr-1.5"></i>Load n.png
+                </button>
+              </div>
+
+              <div class="text-[11px] text-zinc-500 font-mono">
+                Auto-loads n.png from your folder
+              </div>
+            </div>
+
+            <!-- Subtle Bottom Caption Bar (Never covers the face) -->
+            <div class="absolute bottom-3 left-3 right-3 px-4 py-2.5 rounded-2xl bg-obsidian/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+              <div>
+                <div class="font-syne font-bold text-xs text-white">Muntasir Raihan Zidan</div>
+                <div class="text-[11px] text-zinc-400">Dhaka, Bangladesh</div>
+              </div>
               <button
                 onclick="triggerSinglePhoto('n.png')"
-                title="Load or change n.png"
-                class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-midnight/80 hover:bg-royal text-white border border-white/15 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+                title="Swap n.png photo"
+                class="w-8 h-8 rounded-full bg-white/10 hover:bg-cobalt text-white flex items-center justify-center transition-colors"
               >
                 <i class="fas fa-camera text-xs"></i>
               </button>
             </div>
-
-            <!-- Caption Under Portrait (Like Original Portfolio) -->
-            <div class="pt-3 px-2 flex items-center justify-between">
-              <div>
-                <div class="font-poppins font-bold text-sm text-white">Muntasir Raihan Zidan</div>
-                <div class="text-xs text-slate-400">Transportation Engineering • Mobility &amp; AI</div>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <a href="https://www.linkedin.com/in/muntasir-raihan-zidan/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-royal text-skyAccent hover:text-white flex items-center justify-center transition-colors">
-                  <i class="fab fa-linkedin-in text-xs"></i>
-                </a>
-                <a href="https://www.facebook.com/muntasir.raihan.7" target="_blank" rel="noopener" aria-label="Facebook" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-royal text-skyAccent hover:text-white flex items-center justify-center transition-colors">
-                  <i class="fab fa-facebook-f text-xs"></i>
-                </a>
-                <a href="mailto:muntasirraihan@iut-dhaka.edu" aria-label="Email" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-royal text-warmAmber hover:text-white flex items-center justify-center transition-colors">
-                  <i class="fas fa-envelope text-xs"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 2. ABOUT ME & QUICK STATS ================= -->
-    <section id="about" class="fade-up space-y-6">
-      <div class="zidan-card rounded-3xl p-7 sm:p-10 border border-white/10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <!-- Story Column -->
-          <div class="lg:col-span-7 space-y-4">
-            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-skyAccent">
-              <i class="fas fa-user-astronaut"></i> About Me
-            </div>
-            <h2 class="font-poppins font-bold text-2xl sm:text-3xl text-white">
-              From Undergraduate Leader to Postgraduate Transportation Researcher
-            </h2>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I completed my <strong>B.Sc. in Civil &amp; Environmental Engineering</strong> at the <strong>Islamic University of Technology (IUT)</strong> with a <strong>CGPA of 3.69 out of 4.00</strong>, where I specialized in <strong>Transportation Engineering</strong>, and I am now pursuing my <strong>M.Sc. in CEE</strong> at IUT.
-            </p>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              My passion lies at the intersection of traditional highway &amp; traffic engineering and modern data analytics. Whether I'm training object-detection models on Dhaka's busy streets, simulating signalized corridors in <strong>SUMO</strong> and <strong>VISSIM</strong>, drafting full building layouts in <strong>AutoCAD</strong>, or organizing national student events, I enjoy turning complex ideas into practical reality.
-            </p>
-
-            <!-- Roles & Interests Summary (Updated from original portfolio) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
-              <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div class="font-poppins font-semibold text-sm text-skyAccent mb-1.5">
-                  <i class="fas fa-sitemap mr-1.5"></i>Leadership &amp; Teams
-                </div>
-                <ul class="text-xs text-slate-300 space-y-1.5">
-                  <li>• <strong>President</strong> — ACI IUT Student Chapter</li>
-                  <li>• <strong>President</strong> — Lakshmipur Math Club</li>
-                  <li>• <strong>Captain</strong> — IUT CEE Volleyball Team</li>
-                  <li>• <strong>Member</strong> — CEE Basketball Team</li>
-                </ul>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
-                <div class="font-poppins font-semibold text-sm text-warmAmber mb-1.5">
-                  <i class="fas fa-compass-drafting mr-1.5"></i>Core Interests &amp; Tools
-                </div>
-                <ul class="text-xs text-slate-300 space-y-1.5">
-                  <li>• Video Data Analytics &amp; Computer Vision</li>
-                  <li>• SUMO &amp; VISSIM Traffic Microsimulation</li>
-                  <li>• AutoCAD, ETABS &amp; RCC Structural Design</li>
-                  <li>• Python, OpenCV, PLS-SEM &amp; LaTeX</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Animated Counters Column -->
-          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-center">
-              <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-royal/20 text-skyAccent flex items-center justify-center">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <div class="font-poppins font-bold text-2xl sm:text-3xl text-white">
-                <span class="stat-counter" data-target="3.69" data-decimals="2">0.00</span><span class="text-sm text-slate-400">/4.0</span>
-              </div>
-              <div class="text-xs text-slate-400 mt-1">B.Sc. CEE CGPA (IUT)</div>
-            </div>
-
-            <div class="p-5 rounded-2xl bg-white/[0.03] border border-warmAmber/30 text-center">
-              <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-warmAmber/20 text-warmAmber flex items-center justify-center">
-                <i class="fas fa-book-open"></i>
-              </div>
-              <div class="font-poppins font-bold text-2xl sm:text-3xl text-warmAmber">
-                TRB Q2
-              </div>
-              <div class="text-xs text-slate-400 mt-1">Scopus Indexed Paper</div>
-            </div>
-
-            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-center">
-              <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-emeraldFresh/20 text-emeraldFresh flex items-center justify-center">
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="font-poppins font-bold text-2xl sm:text-3xl text-white">
-                <span class="stat-counter" data-target="5.00" data-decimals="2">0.00</span><span class="text-sm text-slate-400">/5.0</span>
-              </div>
-              <div class="text-xs text-slate-400 mt-1">HSC &amp; SSC Perfect GPA</div>
-            </div>
-
-            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-center">
-              <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-skyAccent/20 text-skyAccent flex items-center justify-center">
-                <i class="fas fa-people-group"></i>
-              </div>
-              <div class="font-poppins font-bold text-2xl sm:text-3xl text-white">
-                1,000+
-              </div>
-              <div class="text-xs text-slate-400 mt-1">Students Reached</div>
-            </div>
           </div>
         </div>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 2. VELOCITY-REACTIVE INFINITE KINETIC MARQUEE ================= -->
+  <div class="py-5 border-y border-white/10 bg-[#08090C] overflow-hidden select-none my-8">
+    <div id="marqueeTrack" class="marquee-track flex items-center gap-10 font-syne font-extrabold text-sm sm:text-base tracking-widest uppercase text-zinc-300">
+      <span>TRANSPORTATION ENGINEERING</span>
+      <span class="text-amberGlow">✦</span>
+      <span>COMPUTER VISION AI</span>
+      <span class="text-cobalt">✦</span>
+      <span>SUMO MICROSIMULATION</span>
+      <span class="text-amberGlow">✦</span>
+      <span>STRUCTURAL DESIGN</span>
+      <span class="text-cobalt">✦</span>
+      <span>TRB Q2 SCOPUS AUTHOR</span>
+      <span class="text-amberGlow">✦</span>
+      <span>IUT '26</span>
+      <span class="text-cobalt">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span>TRANSPORTATION ENGINEERING</span>
+      <span class="text-amberGlow">✦</span>
+      <span>COMPUTER VISION AI</span>
+      <span class="text-cobalt">✦</span>
+      <span>SUMO MICROSIMULATION</span>
+      <span class="text-amberGlow">✦</span>
+      <span>STRUCTURAL DESIGN</span>
+      <span class="text-cobalt">✦</span>
+      <span>TRB Q2 SCOPUS AUTHOR</span>
+      <span class="text-amberGlow">✦</span>
+      <span>IUT '26</span>
+      <span class="text-cobalt">✦</span>
+    </div>
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 space-y-28 py-12">
+
+    <!-- ================= 3. INTERACTIVE 3D PARTICLE MORPHING SECTION ================= -->
+    <section id="focus" class="reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-skyGlow uppercase tracking-widest mb-2">01 / Capabilities</div>
+          <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Interactive 3D Core</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400">Click a pillar or drag the 3D mesh to morph geometry in real time.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Left 7 Columns: 60fps 3D Morphing Projection Canvas -->
+        <div class="lg:col-span-7 studio-card min-h-[360px] sm:min-h-[420px] flex flex-col justify-between p-5 relative">
+          <div class="flex items-center justify-between z-10 pointer-events-none">
+            <span id="meshStateBadge" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-skyGlow">
+              STATE 01 // HIGHWAY TRAJECTORY WAVE
+            </span>
+            <span class="font-mono text-xs text-zinc-500">180 NODES · DRAG TO ROTATE</span>
+          </div>
+
+          <canvas id="particleMorphCanvas" class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+
+          <div class="z-10 flex items-center justify-between text-xs text-zinc-400 pointer-events-none pt-2 border-t border-white/5">
+            <span id="meshBottomCaption">YOLOv8 + ByteTrack + SUMO Mobility Pipeline</span>
+            <span class="font-mono text-amberGlow">60 FPS</span>
+          </div>
+        </div>
+
+        <!-- Right 5 Columns: 3 Clean Interactive Pillar Tabs (Concise 1-Line Statements) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+          <!-- Tab 0 -->
+          <button
+            onclick="setMorphShape(0)"
+            data-morph="0"
+            class="morph-tab studio-card p-6 text-left border-cobalt bg-surfaceHover transition-all group"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-skyGlow">01 / MOBILITY &amp; VISION</span>
+              <i class="fas fa-arrow-right text-xs text-skyGlow transition-transform group-hover:translate-x-1"></i>
+            </div>
+            <h3 class="font-syne font-bold text-xl text-white mb-1.5">Intelligent Traffic Analytics</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              Automating road user satisfaction metrics with YOLOv8, ByteTrack, and SUMO.
+            </p>
+          </button>
+
+          <!-- Tab 1 -->
+          <button
+            onclick="setMorphShape(1)"
+            data-morph="1"
+            class="morph-tab studio-card p-6 text-left transition-all group"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-amberGlow">02 / CIVIL &amp; STRUCTURAL</span>
+              <i class="fas fa-arrow-right text-xs text-zinc-500 transition-transform group-hover:translate-x-1"></i>
+            </div>
+            <h3 class="font-syne font-bold text-xl text-white mb-1.5">Structural &amp; Geometric Design</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              Designing BNBC-compliant RC frames, slabs, and building layouts in ETABS &amp; AutoCAD.
+            </p>
+          </button>
+
+          <!-- Tab 2 -->
+          <button
+            onclick="setMorphShape(2)"
+            data-morph="2"
+            class="morph-tab studio-card p-6 text-left transition-all group"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-emeraldGlow">03 / LEADERSHIP &amp; ATHLETICS</span>
+              <i class="fas fa-arrow-right text-xs text-zinc-500 transition-transform group-hover:translate-x-1"></i>
+            </div>
+            <h3 class="font-syne font-bold text-xl text-white mb-1.5">Community &amp; Team Captaincy</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              President of ACI IUT &amp; Lakshmipur Math Club. Captain of CEE Volleyball.
+            </p>
+          </button>
+        </div>
+      </div>
     </section>
 
-    <!-- ================= 3. ENGINEERING RESEARCH & PROJECTS ================= -->
-    <section id="projects" class="fade-up space-y-8">
+    <!-- ================= 4. SELECTED WORK (4 INTERACTIVE SHOWCASE CARDS) ================= -->
+    <section id="work" class="reveal space-y-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-skyAccent mb-1.5">
-            <i class="fas fa-flask"></i> Engineering Research &amp; Design Portfolio
-          </div>
-          <h2 class="font-poppins font-bold text-2xl sm:text-4xl text-white">
-            My Research &amp; Engineering Projects
-          </h2>
+          <div class="font-mono text-xs text-amberGlow uppercase tracking-widest mb-2">02 / Selected Work</div>
+          <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Research &amp; Engineering</h2>
         </div>
-
-        <!-- Category Filter Buttons -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="filterCards('all')" data-cat="all" class="proj-tab px-4 py-2 rounded-xl text-xs font-poppins font-semibold bg-royal text-white transition-all">
-            All Work (4)
-          </button>
-          <button onclick="filterCards('transport')" data-cat="transport" class="proj-tab px-4 py-2 rounded-xl text-xs font-poppins font-medium bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
-            Transportation &amp; SUMO (2)
-          </button>
-          <button onclick="filterCards('structural')" data-cat="structural" class="proj-tab px-4 py-2 rounded-xl text-xs font-poppins font-medium bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all">
-            AutoCAD &amp; RCC Design (2)
-          </button>
-        </div>
+        <p class="text-xs sm:text-sm text-zinc-400">Live simulations and structural blueprints.</p>
       </div>
 
-      <!-- FEATURED PROJECT 1: REAL-TIME VIDEO ANALYTICS FOR ROAD USER SATISFACTION (TRB Q2) -->
-      <div data-category="transport" class="proj-item zidan-card rounded-3xl p-6 sm:p-8 border border-warmAmber/35 relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <!-- Left 6 Cols: Interactive Live Traffic Video Analytics Canvas Simulation -->
-          <div class="lg:col-span-6">
-            <div class="relative rounded-2xl overflow-hidden bg-[#060b17] border border-white/15 shadow-2xl">
-              <!-- Top Camera HUD Bar -->
-              <div class="px-3.5 py-2 bg-midnight/90 border-b border-white/10 flex items-center justify-between text-[11px] font-mono">
-                <div class="flex items-center gap-2 text-emeraldFresh">
-                  <span class="w-2 h-2 rounded-full bg-emeraldFresh animate-ping"></span>
-                  <span>CAM-01: DHAKA ARTERIAL CORRIDOR</span>
-                </div>
-                <div class="text-warmAmber font-semibold">YOLOv8s-seg + ByteTrack</div>
-              </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
 
-              <!-- Live Interactive Canvas showing Vehicles, Bounding Boxes, Speeds & Satisfaction Index -->
-              <div class="relative h-64 sm:h-72 w-full">
-                <canvas id="videoAnalyticsCanvas" class="w-full h-full block"></canvas>
-
-                <!-- Interactive Overlay Control -->
-                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 bg-midnight/85 backdrop-blur-md px-3 py-2 rounded-xl border border-white/10 text-[11px] font-mono">
-                  <div>
-                    <span class="text-slate-400">Live RUSI Score:</span>
-                    <span id="liveRusiVal" class="text-emeraldFresh font-bold ml-1">78.4% (LOS B)</span>
-                  </div>
-                  <button
-                    onclick="toggleTrafficDensity()"
-                    class="px-2.5 py-1 rounded-lg bg-royal/30 hover:bg-royal text-skyAccent hover:text-white border border-skyAccent/30 transition-colors"
-                  >
-                    <i class="fas fa-sliders mr-1"></i><span id="densityBtnLabel">Simulate Peak Jam</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right 6 Cols: Research Story & Publication Details -->
-          <div class="lg:col-span-6 space-y-4">
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-warmAmber text-midnight">
-                Published in TRB • Scopus Q2
-              </span>
-              <span class="px-3 py-1 rounded-full text-xs font-mono bg-royal/20 text-skyAccent border border-skyAccent/30">
-                Computer Vision &amp; Mobility
-              </span>
-            </div>
-
-            <h3 class="font-poppins font-bold text-xl sm:text-2xl text-white leading-snug">
-              Real-Time Video Analytics for Measuring Road User Satisfaction
-            </h3>
-
-            <p class="text-xs font-mono text-slate-400">
-              Paper Title: <em class="text-slate-200">“Using Video Data Analytics to Measure Road User Satisfaction Supplementing Traditional Survey-Based Approach”</em>
-            </p>
-
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Traditional road user satisfaction surveys rely only on questionnaires, which can miss real-time traffic dynamics. In this research, we built a computer-vision pipeline using <strong>YOLOv8 / RF-DETR</strong>, <strong>ByteTrack</strong>, and <strong>OpenCV</strong> to automatically track vehicles, speeds, headways, and congestion patterns from video feeds—combining them with survey analytics to measure how satisfied road users actually are.
-            </p>
-
-            <div class="flex flex-wrap gap-2 text-xs font-mono">
-              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">OpenCV &amp; Python</span>
-              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">Multi-Object Tracking</span>
-              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">Road User LOS</span>
-              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300">PLS-SEM &amp; PCA</span>
-            </div>
-
-            <div class="pt-2 flex flex-wrap gap-3">
-              <button
-                onclick="copyText('Zidan, M. R. (2026). Using Video Data Analytics to Measure Road User Satisfaction Supplementing Traditional Survey-Based Approach. Transportation Research Record (TRB) [Scopus Q2].', 'TRB Paper citation copied!')"
-                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-warmAmber/15 hover:bg-warmAmber/25 text-warmAmber border border-warmAmber/30 text-xs font-semibold transition-all"
-              >
-                <i class="fas fa-quote-left"></i>
-                <span>Copy Paper Citation</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3-COLUMN / 2-COLUMN GRID FOR SUMO, AUTOCAD FLOORPLAN & RCC SLAB -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
-
-        <!-- PROJECT 2: SUMO MICROSCOPIC TRAFFIC SIMULATION -->
-        <article data-category="transport" class="proj-item zidan-card tilt-card rounded-3xl overflow-hidden flex flex-col justify-between border border-white/10">
+        <!-- CARD 1: TRB Q2 VIDEO ANALYTICS -->
+        <article class="studio-card p-6 flex flex-col justify-between">
           <div>
-            <!-- Interactive SUMO Intersection Simulation Canvas -->
-            <div class="relative h-52 bg-[#070d1c] border-b border-white/10 overflow-hidden">
-              <canvas id="sumoSimCanvas" class="w-full h-full block"></canvas>
-              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-royal text-white shadow">
-                SUMO Microsimulation
-              </span>
-              <button
-                onclick="switchSumoSignal()"
-                class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-midnight/85 hover:bg-royal text-[10px] font-mono text-skyAccent hover:text-white border border-skyAccent/30 transition-colors"
-              >
-                <i class="fas fa-traffic-light mr-1"></i>Switch Signal Phase
-              </button>
+            <!-- Live Multi-Lane Computer Vision Canvas -->
+            <div class="relative h-60 rounded-2xl overflow-hidden bg-[#06080E] border border-white/10 mb-6">
+              <canvas id="cvTrafficCanvas" class="w-full h-full block"></canvas>
+
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono pointer-events-none">
+                <span class="px-2.5 py-1 rounded-full bg-obsidian/85 text-amberGlow border border-amberGlow/30">
+                  TRB · SCOPUS Q2
+                </span>
+                <span id="cvStatusBadge" class="px-2.5 py-1 rounded-full bg-obsidian/85 text-emeraldGlow border border-white/10">
+                  LOS B · 78% SATISFACTION
+                </span>
+              </div>
+
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+                <button
+                  onclick="toggleCvJam()"
+                  id="cvJamBtn"
+                  class="magnetic px-3 py-1.5 rounded-full bg-obsidian/90 hover:bg-cobalt text-white font-mono text-[11px] border border-white/15 transition-colors"
+                >
+                  <i class="fas fa-sliders mr-1"></i>Simulate Peak Jam
+                </button>
+                <button
+                  onclick="copyText('Zidan, M. R. (2026). Using Video Data Analytics to Measure Road User Satisfaction Supplementing Traditional Survey-Based Approach. Transportation Research Record (TRB) [Scopus Q2].', 'TRB Q2 citation copied!')"
+                  class="magnetic px-3 py-1.5 rounded-full bg-obsidian/90 hover:bg-amberGlow hover:text-obsidian text-zinc-200 font-mono text-[11px] border border-white/15 transition-colors"
+                >
+                  <i class="fas fa-copy mr-1"></i>Copy Citation
+                </button>
+              </div>
             </div>
 
-            <div class="p-6 space-y-2.5">
-              <div class="text-xs font-mono text-skyAccent">Traffic Engineering • SUMO &amp; VISSIM</div>
-              <h3 class="font-poppins font-bold text-lg text-white">
-                Urban Mobility &amp; Signal Simulation in SUMO
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Modeled urban intersections and arterial corridors in <strong>SUMO (Simulation of Urban MObility)</strong> to analyze vehicle queues, optimize green-signal splits, and improve intersection Level of Service (LOS).
-              </p>
+            <div class="font-mono text-xs text-amberGlow mb-1">
+              Published in Transportation Research Record (TRB) · Scopus Q2
             </div>
+            <h3 class="font-syne font-bold text-2xl text-white mb-2">
+              Video Analytics for Road User Satisfaction
+            </h3>
+            <p class="text-sm text-zinc-400">
+              Replaced traditional paper surveys with YOLOv8 + ByteTrack trajectory tracking.
+            </p>
           </div>
 
-          <div class="px-6 pb-5 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-            <span>#SUMO #TrafficFlow</span>
-            <span class="text-emeraldFresh">Interactive Sim ↑</span>
+          <div class="mt-5 pt-4 border-t border-white/10 flex flex-wrap gap-2 font-mono text-[11px] text-zinc-400">
+            <span>YOLOv8</span>
+            <span>·</span>
+            <span>ByteTrack</span>
+            <span>·</span>
+            <span>OpenCV</span>
+            <span>·</span>
+            <span>PLS-SEM</span>
           </div>
         </article>
 
-        <!-- PROJECT 3: FULL BUILDING DESIGN WITH AUTOCAD (`Floorplan.png`) -->
-        <article data-category="structural" class="proj-item zidan-card tilt-card rounded-3xl overflow-hidden flex flex-col justify-between border border-white/10 group">
+        <!-- CARD 2: SUMO URBAN INTERSECTION MICROSIMULATION -->
+        <article class="studio-card p-6 flex flex-col justify-between">
           <div>
-            <div class="relative h-52 bg-[#071022] border-b border-white/10 overflow-hidden flex items-center justify-center">
+            <!-- Live 4-Way Signalized Intersection Canvas -->
+            <div class="relative h-60 rounded-2xl overflow-hidden bg-[#06080E] border border-white/10 mb-6">
+              <canvas id="sumoCanvas" class="w-full h-full block"></canvas>
+
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono pointer-events-none">
+                <span class="px-2.5 py-1 rounded-full bg-obsidian/85 text-skyGlow border border-skyGlow/30">
+                  SUMO &amp; VISSIM
+                </span>
+                <span id="sumoPhaseLabel" class="px-2.5 py-1 rounded-full bg-obsidian/85 text-emeraldGlow border border-white/10">
+                  PHASE A: E-W GREEN
+                </span>
+              </div>
+
+              <button
+                onclick="toggleSumoPhase()"
+                class="magnetic absolute bottom-3 right-3 px-3.5 py-1.5 rounded-full bg-obsidian/90 hover:bg-cobalt text-white font-mono text-[11px] border border-white/15 transition-colors"
+              >
+                <i class="fas fa-traffic-light mr-1.5 text-amberGlow"></i>Switch Signal Phase
+              </button>
+            </div>
+
+            <div class="font-mono text-xs text-skyGlow mb-1">
+              SUMO &amp; VISSIM · 5,500+ veh/hr Demand
+            </div>
+            <h3 class="font-syne font-bold text-2xl text-white mb-2">
+              Signalized Corridor Microsimulation
+            </h3>
+            <p class="text-sm text-zinc-400">
+              Optimized phase splits and queue discharge for high-density mixed traffic.
+            </p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-white/10 flex flex-wrap gap-2 font-mono text-[11px] text-zinc-400">
+            <span>SUMO</span>
+            <span>·</span>
+            <span>PTV VISSIM</span>
+            <span>·</span>
+            <span>Signal Optimization</span>
+          </div>
+        </article>
+
+        <!-- CARD 3: FULL BUILDING DESIGN WITH AUTOCAD (`Floorplan.png`) -->
+        <article class="studio-card p-6 flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 rounded-2xl overflow-hidden bg-[#070B14] border border-white/10 mb-6 flex items-center justify-center">
               <img
                 src="Floorplan.png"
                 data-slot="Floorplan.png"
-                alt="Building Design with AutoCAD"
+                alt="Multi-Story Architectural & Structural Plans"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-                onclick="openLightbox(this.src, 'Full Building Design with AutoCAD — Floorplans, Sections & Elevations')"
+                onclick="openLightbox(this.src, 'Multi-Story Architectural & Structural Plans — Floorplan.png')"
                 onerror="handleImgError(this, 'Floorplan.png')"
               />
 
-              <!-- Clean Blueprint Preview + Upload Trigger if Floorplan.png isn't loaded in sandbox -->
-              <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-4 bg-[#081329] text-center relative">
-                <svg viewBox="0 0 360 170" class="w-full h-28 opacity-85 mb-2">
-                  <rect x="25" y="12" width="310" height="145" fill="none" stroke="#38bdf8" stroke-width="2"/>
-                  <line x1="140" y1="12" x2="140" y2="157" stroke="#38bdf8" stroke-width="1.5"/>
-                  <line x1="245" y1="12" x2="245" y2="157" stroke="#38bdf8" stroke-width="1.5"/>
-                  <line x1="25" y1="85" x2="140" y2="85" stroke="#38bdf8" stroke-width="1.5"/>
-                  <line x1="245" y1="85" x2="335" y2="85" stroke="#38bdf8" stroke-width="1.5"/>
-                  <text x="45" y="52" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">LIVING ROOM</text>
-                  <text x="45" y="125" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">MASTER BED</text>
-                  <text x="162" y="90" fill="#f8fafc" font-family="JetBrains Mono" font-size="9">DINING / STAIR</text>
-                  <text x="262" y="52" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">BEDROOM 02</text>
-                  <text x="262" y="125" fill="#38bdf8" font-family="JetBrains Mono" font-size="9">KITCHEN</text>
+              <!-- Animated CAD Blueprint SVG Fallback -->
+              <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-5 bg-[#070B14] text-center">
+                <svg viewBox="0 0 360 160" class="w-full h-32 mb-2">
+                  <rect x="20" y="10" width="320" height="140" fill="none" stroke="#38BDF8" stroke-width="1.8"/>
+                  <line x1="135" y1="10" x2="135" y2="150" stroke="#38BDF8" stroke-width="1.2"/>
+                  <line x1="240" y1="10" x2="240" y2="150" stroke="#38BDF8" stroke-width="1.2"/>
+                  <line x1="20" y1="80" x2="135" y2="80" stroke="#38BDF8" stroke-width="1.2"/>
+                  <line x1="240" y1="80" x2="340" y2="80" stroke="#38BDF8" stroke-width="1.2"/>
+                  <circle cx="187" cy="80" r="22" fill="none" stroke="#F97316" stroke-width="1.2" stroke-dasharray="4 3"/>
+                  <text x="42" y="48" fill="#38BDF8" font-family="JetBrains Mono" font-size="9">LIVING ZONE</text>
+                  <text x="42" y="120" fill="#38BDF8" font-family="JetBrains Mono" font-size="9">MASTER SUITE</text>
+                  <text x="158" y="83" fill="#F4F5F8" font-family="JetBrains Mono" font-size="9">CORE / STAIR</text>
+                  <text x="260" y="48" fill="#38BDF8" font-family="JetBrains Mono" font-size="9">BEDROOM 02</text>
+                  <text x="260" y="120" fill="#38BDF8" font-family="JetBrains Mono" font-size="9">KITCHEN</text>
                 </svg>
                 <button
                   onclick="triggerSinglePhoto('Floorplan.png')"
-                  class="px-3 py-1 rounded-lg bg-skyAccent/20 hover:bg-skyAccent text-skyAccent hover:text-midnight text-[11px] font-mono font-semibold border border-skyAccent/40 transition-all"
+                  class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-skyGlow hover:text-obsidian text-xs font-mono text-skyGlow transition-all"
                 >
                   <i class="fas fa-upload mr-1"></i>Load Floorplan.png
                 </button>
               </div>
 
-              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-midnight/80 text-skyAccent border border-skyAccent/30 backdrop-blur-md">
-                AutoCAD Drafting
-              </span>
-              <button
-                onclick="triggerSinglePhoto('Floorplan.png')"
-                title="Load Floorplan.png"
-                class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-midnight/80 hover:bg-royal text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <i class="fas fa-camera text-xs"></i>
-              </button>
+              <div class="absolute bottom-3 right-3 flex gap-2">
+                <button
+                  onclick="triggerSinglePhoto('Floorplan.png')"
+                  title="Load Floorplan.png"
+                  class="w-8 h-8 rounded-full bg-obsidian/85 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+                >
+                  <i class="fas fa-camera text-xs"></i>
+                </button>
+                <button
+                  onclick="openLightboxBySlot('Floorplan.png', 'Multi-Story Architectural & Structural Plans')"
+                  title="Expand Plan"
+                  class="w-8 h-8 rounded-full bg-obsidian/85 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+                >
+                  <i class="fas fa-expand text-xs"></i>
+                </button>
+              </div>
             </div>
 
-            <div class="p-6 space-y-2.5">
-              <div class="text-xs font-mono text-emeraldFresh">Architectural &amp; Structural Drafting</div>
-              <h3 class="font-poppins font-bold text-lg text-white">
-                Full Building Design with AutoCAD
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Complete multi-story building plan including detailed floorplans, sections, and elevations drafted in <strong>AutoCAD</strong> with practical attention to constructability and building codes.
-              </p>
+            <div class="font-mono text-xs text-skyGlow mb-1">
+              AutoCAD · Floorplans, Elevations &amp; Sections
             </div>
+            <h3 class="font-syne font-bold text-2xl text-white mb-2">
+              Multi-Story Architectural &amp; Structural Plans
+            </h3>
+            <p class="text-sm text-zinc-400">
+              Complete residential layout engineered for constructability and spatial flow.
+            </p>
           </div>
 
-          <div class="px-6 pb-5 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-            <span>Floorplan.png</span>
-            <button onclick="openLightboxBySlot('Floorplan.png', 'Full Building Design with AutoCAD')" class="text-skyAccent hover:underline">
-              Zoom Plan <i class="fas fa-expand ml-1"></i>
-            </button>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[11px] text-zinc-400">
+            <span>AutoCAD 2D/3D · BNBC</span>
+            <span class="text-zinc-500">Floorplan.png</span>
           </div>
         </article>
 
-        <!-- PROJECT 4: RCC SLAB & BEAM DESIGN (`slab reinforcement.png`) -->
-        <article data-category="structural" class="proj-item zidan-card tilt-card rounded-3xl overflow-hidden flex flex-col justify-between border border-white/10 group">
+        <!-- CARD 4: RCC SLAB & BEAM DETAILING (`slab reinforcement.png`) -->
+        <article class="studio-card p-6 flex flex-col justify-between group">
           <div>
-            <div class="relative h-52 bg-[#071022] border-b border-white/10 overflow-hidden flex items-center justify-center">
+            <div class="relative h-60 rounded-2xl overflow-hidden bg-[#070B14] border border-white/10 mb-6 flex items-center justify-center">
               <img
                 src="slab reinforcement.png"
                 data-slot="slab reinforcement.png"
-                alt="RCC Slab and Beam Design"
+                alt="RCC Slab & Beam Reinforcement"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-                onclick="openLightbox(this.src, 'RCC Slab & Beam Reinforcement Layout and Structural Detailing')"
+                onclick="openLightbox(this.src, 'RCC Slab & Beam Reinforcement — slab reinforcement.png')"
                 onerror="handleImgError(this, 'slab reinforcement.png')"
               />
 
-              <!-- Clean Structural Rebar Preview + Upload Trigger if slab reinforcement.png isn't loaded in sandbox -->
-              <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-4 bg-[#081329] text-center relative">
-                <svg viewBox="0 0 360 170" class="w-full h-28 opacity-85 mb-2">
-                  <rect x="25" y="15" width="310" height="140" fill="none" stroke="#94a3b8" stroke-width="2"/>
-                  <line x1="25" y1="50" x2="335" y2="50" stroke="#38bdf8" stroke-width="2"/>
-                  <polyline points="25,85 85,85 105,70 255,70 275,85 335,85" fill="none" stroke="#f59e0b" stroke-width="2"/>
-                  <line x1="25" y1="120" x2="335" y2="120" stroke="#38bdf8" stroke-width="2"/>
-                  <line x1="100" y1="15" x2="100" y2="155" stroke="#10b981" stroke-width="1.2" stroke-dasharray="4,4"/>
-                  <line x1="180" y1="15" x2="180" y2="155" stroke="#10b981" stroke-width="1.2" stroke-dasharray="4,4"/>
-                  <line x1="260" y1="15" x2="260" y2="155" stroke="#10b981" stroke-width="1.2" stroke-dasharray="4,4"/>
-                  <text x="90" y="42" fill="#38bdf8" font-family="JetBrains Mono" font-size="8.5">#12mm @ 150mm c/c Main Bar</text>
-                  <text x="90" y="108" fill="#f59e0b" font-family="JetBrains Mono" font-size="8.5">Cranked Bar Reinforcement</text>
+              <!-- Animated Structural Rebar SVG Fallback -->
+              <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-5 bg-[#070B14] text-center">
+                <svg viewBox="0 0 360 160" class="w-full h-32 mb-2">
+                  <rect x="20" y="15" width="320" height="130" fill="none" stroke="#64748B" stroke-width="1.8"/>
+                  <line x1="20" y1="48" x2="340" y2="48" stroke="#38BDF8" stroke-width="2"/>
+                  <polyline points="20,82 85,82 105,64 255,64 275,82 340,82" fill="none" stroke="#F97316" stroke-width="2.2"/>
+                  <line x1="20" y1="115" x2="340" y2="115" stroke="#38BDF8" stroke-width="2"/>
+                  <line x1="100" y1="15" x2="100" y2="145" stroke="#10B981" stroke-width="1.2" stroke-dasharray="4 4"/>
+                  <line x1="180" y1="15" x2="180" y2="145" stroke="#10B981" stroke-width="1.2" stroke-dasharray="4 4"/>
+                  <line x1="260" y1="15" x2="260" y2="145" stroke="#10B981" stroke-width="1.2" stroke-dasharray="4 4"/>
+                  <text x="105" y="40" fill="#38BDF8" font-family="JetBrains Mono" font-size="8.5">#12mm @ 150mm c/c MAIN BARS</text>
+                  <text x="105" y="102" fill="#F97316" font-family="JetBrains Mono" font-size="8.5">CRANKED BARS &amp; STIRRUPS</text>
                 </svg>
                 <button
                   onclick="triggerSinglePhoto('slab reinforcement.png')"
-                  class="px-3 py-1 rounded-lg bg-warmAmber/20 hover:bg-warmAmber text-warmAmber hover:text-midnight text-[11px] font-mono font-semibold border border-warmAmber/40 transition-all"
+                  class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-amberGlow hover:text-obsidian text-xs font-mono text-amberGlow transition-all"
                 >
                   <i class="fas fa-upload mr-1"></i>Load slab reinforcement.png
                 </button>
               </div>
 
-              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-midnight/80 text-warmAmber border border-warmAmber/30 backdrop-blur-md">
-                RCC Detailing
-              </span>
-              <button
-                onclick="triggerSinglePhoto('slab reinforcement.png')"
-                title="Load slab reinforcement.png"
-                class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-midnight/80 hover:bg-royal text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <i class="fas fa-camera text-xs"></i>
-              </button>
+              <div class="absolute bottom-3 right-3 flex gap-2">
+                <button
+                  onclick="triggerSinglePhoto('slab reinforcement.png')"
+                  title="Load slab reinforcement.png"
+                  class="w-8 h-8 rounded-full bg-obsidian/85 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+                >
+                  <i class="fas fa-camera text-xs"></i>
+                </button>
+                <button
+                  onclick="openLightboxBySlot('slab reinforcement.png', 'RCC Slab & Beam Reinforcement')"
+                  title="Expand Detailing"
+                  class="w-8 h-8 rounded-full bg-obsidian/85 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+                >
+                  <i class="fas fa-expand text-xs"></i>
+                </button>
+              </div>
             </div>
 
-            <div class="p-6 space-y-2.5">
-              <div class="text-xs font-mono text-warmAmber">Structural Engineering • ETABS &amp; CAD</div>
-              <h3 class="font-poppins font-bold text-lg text-white">
-                RCC Slab &amp; Beam Design
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Reinforced concrete (RCC) slab and beam reinforcement layout with flexural and shear design checks, cranked bar detailing, and structural modeling in <strong>ETABS</strong> and <strong>AutoCAD</strong>.
-              </p>
+            <div class="font-mono text-xs text-emeraldGlow mb-1">
+              ETABS &amp; AutoCAD · BNBC Standards
             </div>
+            <h3 class="font-syne font-bold text-2xl text-white mb-2">
+              RCC Slab &amp; Beam Reinforcement
+            </h3>
+            <p class="text-sm text-zinc-400">
+              Two-way slab bar curtailment, development lengths, and shear stirrup detailing.
+            </p>
           </div>
 
-          <div class="px-6 pb-5 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-            <span>slab reinforcement.png</span>
-            <button onclick="openLightboxBySlot('slab reinforcement.png', 'RCC Slab & Beam Reinforcement Design')" class="text-warmAmber hover:underline">
-              Zoom Rebar <i class="fas fa-expand ml-1"></i>
-            </button>
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[11px] text-zinc-400">
+            <span>RCC Design · ETABS</span>
+            <span class="text-zinc-500">slab reinforcement.png</span>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- ================= 4. SKILLS & EXPERTISE (UPGRADED RINGS + BARS FROM ORIGINAL SITE) ================= -->
-    <section id="skills" class="fade-up space-y-8">
-      <div class="text-center max-w-2xl mx-auto space-y-2">
-        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-skyAccent">
-          <i class="fas fa-sliders"></i> Skills &amp; Expertise
-        </div>
-        <h2 class="font-poppins font-bold text-2xl sm:text-4xl text-white">
-          Engineering Software &amp; Technical Tools
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-400">
-          Evolved from my undergraduate toolkit into postgraduate research, simulation, and structural analysis
-        </p>
-      </div>
-
-      <!-- Circular Skill Rings (Matches Original Portfolio Style, Upgraded for Graduated Profile) -->
-      <div class="zidan-card rounded-3xl p-6 sm:p-8 border border-white/10">
-        <div class="text-center text-xs font-mono uppercase tracking-wider text-slate-400 mb-6">
-          Engineering, Simulation &amp; Computer Vision Software
-        </div>
-        <div id="ringGrid" class="flex flex-wrap gap-7 justify-center">
-          <!-- Populated dynamically by JS -->
-        </div>
-      </div>
-
-      <!-- Horizontal Progress Bars: Productivity, Data Analysis & Research Writing -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
-        <div class="zidan-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-5">
-          <h3 class="font-poppins font-bold text-lg text-white flex items-center gap-2">
-            <i class="fas fa-laptop-code text-skyAccent"></i>
-            <span>Data Analytics &amp; Research Workflow</span>
-          </h3>
-
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-1.5">
-                <span>Video Data Analytics (YOLOv8, ByteTrack, OpenCV)</span>
-                <span class="text-skyAccent font-mono">85%</span>
-              </div>
-              <div class="h-3 rounded-full bg-white/5 overflow-hidden">
-                <div class="bar-fill h-full rounded-full bg-gradient-to-r from-royal to-skyAccent" data-target="85"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-1.5">
-                <span>Statistical Modeling (Python, PLS-SEM, PCA)</span>
-                <span class="text-skyAccent font-mono">80%</span>
-              </div>
-              <div class="h-3 rounded-full bg-white/5 overflow-hidden">
-                <div class="bar-fill h-full rounded-full bg-gradient-to-r from-royal to-skyAccent" data-target="80"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-1.5">
-                <span>Academic Writing &amp; LaTeX Typesetting</span>
-                <span class="text-skyAccent font-mono">85%</span>
-              </div>
-              <div class="h-3 rounded-full bg-white/5 overflow-hidden">
-                <div class="bar-fill h-full rounded-full bg-gradient-to-r from-royal to-skyAccent" data-target="85"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="zidan-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-5">
-          <h3 class="font-poppins font-bold text-lg text-white flex items-center gap-2">
-            <i class="fas fa-briefcase text-warmAmber"></i>
-            <span>Productivity &amp; Office Suite</span>
-          </h3>
-
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-1.5">
-                <span>MS Word (Technical Reports &amp; Documentation)</span>
-                <span class="text-warmAmber font-mono">90%</span>
-              </div>
-              <div class="h-3 rounded-full bg-white/5 overflow-hidden">
-                <div class="bar-fill h-full rounded-full bg-gradient-to-r from-royal to-warmAmber" data-target="90"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-1.5">
-                <span>MS Excel (Engineering Spreadsheets &amp; Data)</span>
-                <span class="text-warmAmber font-mono">88%</span>
-              </div>
-              <div class="h-3 rounded-full bg-white/5 overflow-hidden">
-                <div class="bar-fill h-full rounded-full bg-gradient-to-r from-royal to-warmAmber" data-target="88"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-1.5">
-                <span>MS PowerPoint (Presentations &amp; Seminars)</span>
-                <span class="text-warmAmber font-mono">85%</span>
-              </div>
-              <div class="h-3 rounded-full bg-white/5 overflow-hidden">
-                <div class="bar-fill h-full rounded-full bg-gradient-to-r from-royal to-warmAmber" data-target="85"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 5. EXTRACURRICULAR ACTIVITIES & LEADERSHIP (`aci.jpg` & `Math Club.jpg`) ================= -->
-    <section id="activities" class="fade-up space-y-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+    <!-- ================= 5. ANIMATED TELEMETRY & SKILL METERS ================= -->
+    <section id="skills" class="reveal space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-warmAmber mb-1.5">
-            <i class="fas fa-users"></i> Community &amp; Leadership
-          </div>
-          <h2 class="font-poppins font-bold text-2xl sm:text-4xl text-white">
-            Extracurricular Activities
-          </h2>
+          <div class="font-mono text-xs text-skyGlow uppercase tracking-widest mb-2">03 / Technical Stack</div>
+          <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Tools &amp; Telemetry</h2>
         </div>
-        <p class="text-xs text-slate-400">Click any photo to view full screen or load from your computer</p>
+        <p class="text-xs sm:text-sm text-zinc-400">Simulation, computer vision, and structural engineering stack.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <!-- Activity 1: ACI IUT Student Chapter (`aci.jpg`) -->
-        <div class="polaroid-frame tilt-card group" style="transform: rotate(-0.6deg);">
-          <div class="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden bg-panel border border-white/10">
-            <img
-              src="aci.jpg"
-              data-slot="aci.jpg"
-              alt="ACI IUT Student Chapter"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-              onclick="openLightbox(this.src, 'President — ACI IUT Student Chapter: Workshops, Seminars & Concrete Competitions')"
-              onerror="handleImgError(this, 'aci.jpg')"
-            />
-
-            <!-- Warm Photo Frame Fallback for aci.jpg -->
-            <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0e1e42] to-[#070d1c] text-center">
-              <div class="w-16 h-16 rounded-2xl bg-royal/25 border border-skyAccent/40 flex items-center justify-center text-skyAccent text-2xl mb-3">
-                <i class="fas fa-building-columns"></i>
-              </div>
-              <div class="font-poppins font-bold text-white text-base">ACI IUT Student Chapter Photo</div>
-              <p class="text-xs text-slate-400 mt-1 mb-3">Linked to <code class="text-skyAccent">aci.jpg</code> in your folder</p>
-              <button
-                onclick="triggerSinglePhoto('aci.jpg')"
-                class="px-4 py-2 rounded-xl bg-royal hover:bg-blue-600 text-white text-xs font-semibold transition-all shadow-lg"
-              >
-                <i class="fas fa-camera mr-1.5"></i>Load aci.jpg Photo
-              </button>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-center">
+        <!-- Left 7 Columns: Horizontal Motion Meters -->
+        <div class="lg:col-span-7 studio-card p-7 space-y-5">
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <span class="text-white">SUMO &amp; PTV VISSIM (Microsimulation)</span>
+              <span class="text-skyGlow">90%</span>
             </div>
-
-            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-poppins font-semibold bg-royal text-white shadow-lg">
-              President • ACI IUT
-            </span>
-            <button
-              onclick="triggerSinglePhoto('aci.jpg')"
-              title="Change aci.jpg"
-              class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-midnight/80 hover:bg-royal text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-              <i class="fas fa-camera text-xs"></i>
-            </button>
+            <div class="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-cobalt to-skyGlow" data-width="90"></div>
+            </div>
           </div>
 
-          <div class="p-4 space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="font-poppins font-bold text-xl text-white">ACI IUT Student Chapter</h3>
-              <span class="text-xs font-mono text-skyAccent">IUT Chapter</span>
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <span class="text-white">AutoCAD (2D/3D Structural &amp; Geometric Drafting)</span>
+              <span class="text-skyGlow">88%</span>
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Served as <strong>President</strong> of the American Concrete Institute (ACI) IUT Student Chapter—organizing hands-on workshops, technical seminars on concrete technology and structural durability, and inter-university engineering quizzes.
-            </p>
-          </div>
-        </div>
-
-        <!-- Activity 2: Lakshmipur Math Club (`Math Club.jpg`) -->
-        <div class="polaroid-frame tilt-card group" style="transform: rotate(0.6deg);">
-          <div class="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden bg-panel border border-white/10">
-            <img
-              src="Math Club.jpg"
-              data-slot="Math Club.jpg"
-              alt="Lakshmipur Math Club"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-              onclick="openLightbox(this.src, 'President — Lakshmipur Math Club: Olympiads, Rubik\'s Cube Events & 1000+ Student Outreach')"
-              onerror="handleImgError(this, 'Math Club.jpg')"
-            />
-
-            <!-- Warm Photo Frame Fallback for Math Club.jpg -->
-            <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#23190b] to-[#080d1a] text-center">
-              <div class="w-16 h-16 rounded-2xl bg-warmAmber/20 border border-warmAmber/40 flex items-center justify-center text-warmAmber text-2xl mb-3">
-                <i class="fas fa-square-root-variable"></i>
-              </div>
-              <div class="font-poppins font-bold text-white text-base">Lakshmipur Math Club Photo</div>
-              <p class="text-xs text-slate-400 mt-1 mb-3">Linked to <code class="text-warmAmber">Math Club.jpg</code> in your folder</p>
-              <button
-                onclick="triggerSinglePhoto('Math Club.jpg')"
-                class="px-4 py-2 rounded-xl bg-warmAmber text-midnight text-xs font-semibold hover:bg-amber-400 transition-all shadow-lg"
-              >
-                <i class="fas fa-camera mr-1.5"></i>Load Math Club.jpg Photo
-              </button>
+            <div class="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-cobalt to-skyGlow" data-width="88"></div>
             </div>
-
-            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-poppins font-semibold bg-warmAmber text-midnight shadow-lg">
-              President • Math Club
-            </span>
-            <button
-              onclick="triggerSinglePhoto('Math Club.jpg')"
-              title="Change Math Club.jpg"
-              class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-midnight/80 hover:bg-royal text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-              <i class="fas fa-camera text-xs"></i>
-            </button>
           </div>
 
-          <div class="p-4 space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="font-poppins font-bold text-xl text-white">Lakshmipur Math Club</h3>
-              <span class="text-xs font-mono text-warmAmber">1,000+ Students</span>
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <span class="text-white">Python &amp; Vision AI (YOLOv8, ByteTrack, OpenCV)</span>
+              <span class="text-amberGlow">85%</span>
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Served as <strong>President</strong>—organizing regional Math Olympiads, Rubik's Cube competitions, and STEM mentorship seminars reaching and inspiring <strong>over 1,000+ students</strong> across Lakshmipur.
-            </p>
+            <div class="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-amberGlow to-yellow-400" data-width="85"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <span class="text-white">ETABS &amp; Abaqus (Structural &amp; FEM Analysis)</span>
+              <span class="text-emeraldGlow">80%</span>
+            </div>
+            <div class="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-emeraldGlow to-skyGlow" data-width="80"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <span class="text-white">LaTeX, PLS-SEM &amp; Microsoft Office Suite</span>
+              <span class="text-skyGlow">92%</span>
+            </div>
+            <div class="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-cobalt to-skyGlow" data-width="92"></div>
+            </div>
           </div>
         </div>
 
+        <!-- Right 5 Columns: Academic Milestones Bento -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div class="studio-card p-6">
+            <div class="font-mono text-xs text-skyGlow mb-2">ONGOING</div>
+            <div class="font-syne font-bold text-xl text-white">M.Sc. in CEE</div>
+            <div class="text-xs text-zinc-400 mt-1">IUT · Transportation</div>
+          </div>
+          <div class="studio-card p-6">
+            <div class="font-mono text-xs text-amberGlow mb-2">2026</div>
+            <div class="font-syne font-bold text-xl text-white">B.Sc. in CEE</div>
+            <div class="text-xs text-zinc-400 mt-1">IUT · CGPA 3.69/4.00</div>
+          </div>
+          <div class="studio-card p-6">
+            <div class="font-mono text-xs text-emeraldGlow mb-2">2021</div>
+            <div class="font-syne font-bold text-xl text-white">HSC Science</div>
+            <div class="text-xs text-zinc-400 mt-1">Dhaka Board · GPA 5.00</div>
+          </div>
+          <div class="studio-card p-6">
+            <div class="font-mono text-xs text-zinc-400 mb-2">2019</div>
+            <div class="font-syne font-bold text-xl text-white">SSC Science</div>
+            <div class="text-xs text-zinc-400 mt-1">Comilla Board · GPA 5.00</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ================= 6. SPORTS & ACHIEVEMENTS (`Volleyball.jpeg` & `Basketball.jpeg`) ================= -->
-    <section id="sports" class="fade-up space-y-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+    <!-- ================= 6. INTERACTIVE 4-CARD BENTO PHOTO GRID (LEADERSHIP & SPORTS) ================= -->
+    <section id="bento" class="reveal space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emeraldFresh mb-1.5">
-            <i class="fas fa-medal"></i> Athletics &amp; Team Spirit
-          </div>
-          <h2 class="font-poppins font-bold text-2xl sm:text-4xl text-white">
-            Sports &amp; Achievements
-          </h2>
+          <div class="font-mono text-xs text-emeraldGlow uppercase tracking-widest mb-2">04 / Beyond Engineering</div>
+          <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white">Leadership &amp; Athletics</h2>
         </div>
-        <p class="text-xs text-slate-400">Competing on the court for the Department of Civil &amp; Environmental Engineering</p>
+        <p class="text-xs sm:text-sm text-zinc-400">Click any photo to view full screen or upload from your folder.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
-        <!-- Sport 1: Volleyball Captain (`Volleyball.jpeg`) -->
-        <div class="polaroid-frame tilt-card group" style="transform: rotate(0.5deg);">
-          <div class="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden bg-panel border border-white/10">
-            <img
-              src="Volleyball.jpeg"
-              data-slot="Volleyball.jpeg"
-              alt="IUT CEE Volleyball Team Captain"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-              onclick="openLightbox(this.src, 'Captain — IUT CEE Volleyball Team')"
-              onerror="handleImgError(this, 'Volleyball.jpeg')"
-            />
+        <!-- BENTO 1: ACI IUT (`aci.jpg`) - 7 Columns -->
+        <div class="md:col-span-7 studio-card group relative h-80 overflow-hidden">
+          <img
+            src="aci.jpg"
+            data-slot="aci.jpg"
+            alt="President, ACI IUT Student Chapter"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+            onclick="openLightbox(this.src, 'President — ACI IUT Student Chapter')"
+            onerror="handleImgError(this, 'aci.jpg')"
+          />
 
-            <!-- Warm Photo Frame Fallback for Volleyball.jpeg -->
-            <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0b2924] to-[#070d1c] text-center">
-              <div class="w-16 h-16 rounded-2xl bg-emeraldFresh/20 border border-emeraldFresh/40 flex items-center justify-center text-emeraldFresh text-2xl mb-3">
-                <i class="fas fa-volleyball"></i>
-              </div>
-              <div class="font-poppins font-bold text-white text-base">IUT CEE Volleyball Team Photo</div>
-              <p class="text-xs text-slate-400 mt-1 mb-3">Linked to <code class="text-emeraldFresh">Volleyball.jpeg</code> in your folder</p>
-              <button
-                onclick="triggerSinglePhoto('Volleyball.jpeg')"
-                class="px-4 py-2 rounded-xl bg-emeraldFresh text-midnight text-xs font-semibold hover:bg-emerald-400 transition-all shadow-lg"
-              >
-                <i class="fas fa-camera mr-1.5"></i>Load Volleyball.jpeg Photo
-              </button>
-            </div>
-
-            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-poppins font-semibold bg-emeraldFresh text-midnight shadow-lg">
-              Team Captain
-            </span>
-            <button
-              onclick="triggerSinglePhoto('Volleyball.jpeg')"
-              title="Change Volleyball.jpeg"
-              class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-midnight/80 hover:bg-royal text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-              <i class="fas fa-camera text-xs"></i>
+          <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0F1B38] to-[#07090F] text-center">
+            <i class="fas fa-building-columns text-3xl text-skyGlow mb-3"></i>
+            <div class="font-syne font-bold text-lg text-white">ACI IUT Student Chapter</div>
+            <button onclick="triggerSinglePhoto('aci.jpg')" class="mt-3 px-4 py-1.5 rounded-full bg-white/10 hover:bg-cobalt text-xs font-mono text-white transition-all">
+              Load aci.jpg
             </button>
           </div>
 
-          <div class="p-4 space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="font-poppins font-bold text-xl text-white">Volleyball — Team Captain</h3>
-              <span class="text-xs font-mono text-emeraldFresh">IUT CEE Team</span>
+          <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-cobalt text-white font-mono text-[10px] uppercase">President</span>
+              <h3 class="font-syne font-bold text-2xl text-white mt-2">ACI IUT Student Chapter</h3>
+              <p class="text-xs text-zinc-300 mt-0.5">Led concrete workshops, structural seminars, and national student competitions.</p>
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              <strong>Captain of the IUT CEE Volleyball Team</strong>—leading team training sessions, court strategy, and competitive matches across inter-departmental tournaments at IUT.
-            </p>
           </div>
+
+          <button
+            onclick="triggerSinglePhoto('aci.jpg')"
+            title="Load aci.jpg"
+            class="absolute top-4 right-4 w-9 h-9 rounded-full bg-obsidian/80 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+          >
+            <i class="fas fa-camera text-xs"></i>
+          </button>
         </div>
 
-        <!-- Sport 2: Basketball (`Basketball.jpeg`) -->
-        <div class="polaroid-frame tilt-card group" style="transform: rotate(-0.5deg);">
-          <div class="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden bg-panel border border-white/10">
-            <img
-              src="Basketball.jpeg"
-              data-slot="Basketball.jpeg"
-              alt="CEE Basketball Team"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-              onclick="openLightbox(this.src, 'Member — IUT CEE Basketball Team')"
-              onerror="handleImgError(this, 'Basketball.jpeg')"
-            />
+        <!-- BENTO 2: LAKSHMIPUR MATH CLUB (`Math Club.jpg`) - 5 Columns -->
+        <div class="md:col-span-5 studio-card group relative h-80 overflow-hidden">
+          <img
+            src="Math Club.jpg"
+            data-slot="Math Club.jpg"
+            alt="President, Lakshmipur Math Club"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+            onclick="openLightbox(this.src, 'President — Lakshmipur Math Club · 1,000+ Students')"
+            onerror="handleImgError(this, 'Math Club.jpg')"
+          />
 
-            <!-- Warm Photo Frame Fallback for Basketball.jpeg -->
-            <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#2b1409] to-[#070d1c] text-center">
-              <div class="w-16 h-16 rounded-2xl bg-orange-500/20 border border-orange-400/40 flex items-center justify-center text-orange-400 text-2xl mb-3">
-                <i class="fas fa-basketball"></i>
-              </div>
-              <div class="font-poppins font-bold text-white text-base">IUT CEE Basketball Team Photo</div>
-              <p class="text-xs text-slate-400 mt-1 mb-3">Linked to <code class="text-orange-400">Basketball.jpeg</code> in your folder</p>
-              <button
-                onclick="triggerSinglePhoto('Basketball.jpeg')"
-                class="px-4 py-2 rounded-xl bg-orange-500 text-white text-xs font-semibold hover:bg-orange-400 transition-all shadow-lg"
-              >
-                <i class="fas fa-camera mr-1.5"></i>Load Basketball.jpeg Photo
-              </button>
-            </div>
-
-            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-poppins font-semibold bg-orange-500 text-white shadow-lg">
-              CEE Squad Member
-            </span>
-            <button
-              onclick="triggerSinglePhoto('Basketball.jpeg')"
-              title="Change Basketball.jpeg"
-              class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-midnight/80 hover:bg-royal text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-              <i class="fas fa-camera text-xs"></i>
+          <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#291708] to-[#07090F] text-center">
+            <i class="fas fa-square-root-variable text-3xl text-amberGlow mb-3"></i>
+            <div class="font-syne font-bold text-lg text-white">Lakshmipur Math Club</div>
+            <button onclick="triggerSinglePhoto('Math Club.jpg')" class="mt-3 px-4 py-1.5 rounded-full bg-white/10 hover:bg-amberGlow hover:text-obsidian text-xs font-mono text-amberGlow transition-all">
+              Load Math Club.jpg
             </button>
           </div>
 
-          <div class="p-4 space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="font-poppins font-bold text-xl text-white">Basketball — CEE Team</h3>
-              <span class="text-xs font-mono text-orange-400">Inter-Dept Events</span>
+          <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-amberGlow text-obsidian font-mono font-bold text-[10px] uppercase">President · 1,000+ Students</span>
+              <h3 class="font-syne font-bold text-2xl text-white mt-2">Lakshmipur Math Club</h3>
+              <p class="text-xs text-zinc-300 mt-0.5">Organized regional Math Olympiads and STEM outreach across Lakshmipur.</p>
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Core member of the <strong>IUT CEE Basketball Team</strong>—actively competing in inter-departmental basketball tournaments with fast-paced teamwork and court endurance.
-            </p>
           </div>
+
+          <button
+            onclick="triggerSinglePhoto('Math Club.jpg')"
+            title="Load Math Club.jpg"
+            class="absolute top-4 right-4 w-9 h-9 rounded-full bg-obsidian/80 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+          >
+            <i class="fas fa-camera text-xs"></i>
+          </button>
+        </div>
+
+        <!-- BENTO 3: CEE VOLLEYBALL CAPTAIN (`Volleyball.jpeg`) - 6 Columns -->
+        <div class="md:col-span-6 studio-card group relative h-80 overflow-hidden">
+          <img
+            src="Volleyball.jpeg"
+            data-slot="Volleyball.jpeg"
+            alt="Captain, IUT CEE Volleyball"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+            onclick="openLightbox(this.src, 'Captain — IUT CEE Volleyball Team')"
+            onerror="handleImgError(this, 'Volleyball.jpeg')"
+          />
+
+          <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#09261E] to-[#07090F] text-center">
+            <i class="fas fa-volleyball text-3xl text-emeraldGlow mb-3"></i>
+            <div class="font-syne font-bold text-lg text-white">IUT CEE Volleyball</div>
+            <button onclick="triggerSinglePhoto('Volleyball.jpeg')" class="mt-3 px-4 py-1.5 rounded-full bg-white/10 hover:bg-emeraldGlow hover:text-obsidian text-xs font-mono text-emeraldGlow transition-all">
+              Load Volleyball.jpeg
+            </button>
+          </div>
+
+          <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-emeraldGlow text-obsidian font-mono font-bold text-[10px] uppercase">Team Captain</span>
+              <h3 class="font-syne font-bold text-2xl text-white mt-2">IUT CEE Volleyball</h3>
+              <p class="text-xs text-zinc-300 mt-0.5">Led court strategy, training, and inter-departmental championship runs.</p>
+            </div>
+          </div>
+
+          <button
+            onclick="triggerSinglePhoto('Volleyball.jpeg')"
+            title="Load Volleyball.jpeg"
+            class="absolute top-4 right-4 w-9 h-9 rounded-full bg-obsidian/80 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+          >
+            <i class="fas fa-camera text-xs"></i>
+          </button>
+        </div>
+
+        <!-- BENTO 4: CEE BASKETBALL (`Basketball.jpeg`) - 6 Columns -->
+        <div class="md:col-span-6 studio-card group relative h-80 overflow-hidden">
+          <img
+            src="Basketball.jpeg"
+            data-slot="Basketball.jpeg"
+            alt="Player, IUT CEE Basketball"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+            onclick="openLightbox(this.src, 'Squad Member — IUT CEE Basketball Team')"
+            onerror="handleImgError(this, 'Basketball.jpeg')"
+          />
+
+          <div class="img-fallback hidden w-full h-full flex-col items-center justify-center p-6 bg-gradient-to-br from-[#2B1409] to-[#07090F] text-center">
+            <i class="fas fa-basketball text-3xl text-orange-400 mb-3"></i>
+            <div class="font-syne font-bold text-lg text-white">IUT CEE Basketball</div>
+            <button onclick="triggerSinglePhoto('Basketball.jpeg')" class="mt-3 px-4 py-1.5 rounded-full bg-white/10 hover:bg-orange-400 hover:text-obsidian text-xs font-mono text-orange-400 transition-all">
+              Load Basketball.jpeg
+            </button>
+          </div>
+
+          <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent flex items-end justify-between pointer-events-none">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-white/15 text-white font-mono text-[10px] uppercase">CEE Squad</span>
+              <h3 class="font-syne font-bold text-2xl text-white mt-2">IUT CEE Basketball</h3>
+              <p class="text-xs text-zinc-300 mt-0.5">Active competitor in inter-department basketball tournaments at IUT.</p>
+            </div>
+          </div>
+
+          <button
+            onclick="triggerSinglePhoto('Basketball.jpeg')"
+            title="Load Basketball.jpeg"
+            class="absolute top-4 right-4 w-9 h-9 rounded-full bg-obsidian/80 hover:bg-cobalt text-white flex items-center justify-center border border-white/15"
+          >
+            <i class="fas fa-camera text-xs"></i>
+          </button>
         </div>
 
       </div>
     </section>
 
-    <!-- ================= 7. EDUCATION TIMELINE ================= -->
-    <section id="education" class="fade-up space-y-8">
-      <div>
-        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-skyAccent mb-1.5">
-          <i class="fas fa-graduation-cap"></i> Academic Journey
-        </div>
-        <h2 class="font-poppins font-bold text-2xl sm:text-4xl text-white">
-          Education
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- M.Sc. -->
-        <div class="zidan-card rounded-2xl p-6 border-t-2 border-t-skyAccent flex flex-col justify-between">
-          <div>
-            <span class="px-2.5 py-1 rounded-md bg-skyAccent/15 text-skyAccent font-mono text-[11px] font-semibold">
-              Ongoing • Masters
-            </span>
-            <h3 class="font-poppins font-bold text-lg text-white mt-3">M.Sc. in Civil &amp; Environmental Engineering</h3>
-            <p class="text-xs text-slate-300 mt-1">Islamic University of Technology (IUT)</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-emeraldFresh">
-            Specialization: Transportation
-          </div>
-        </div>
-
-        <!-- B.Sc. -->
-        <div class="zidan-card rounded-2xl p-6 border-t-2 border-t-royalLight flex flex-col justify-between">
-          <div>
-            <span class="px-2.5 py-1 rounded-md bg-royal/25 text-white font-mono text-[11px] font-semibold">
-              Graduated • 2026
-            </span>
-            <h3 class="font-poppins font-bold text-lg text-white mt-3">B.Sc. in Civil &amp; Environmental Engineering</h3>
-            <p class="text-xs text-slate-300 mt-1">Islamic University of Technology (IUT)</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-warmAmber font-bold">
-            CGPA: 3.69 out of 4.00
-          </div>
-        </div>
-
-        <!-- HSC -->
-        <div class="zidan-card rounded-2xl p-6 border-t-2 border-t-emeraldFresh flex flex-col justify-between">
-          <div>
-            <span class="px-2.5 py-1 rounded-md bg-white/10 text-slate-300 font-mono text-[11px]">
-              2021 • Science
-            </span>
-            <h3 class="font-poppins font-bold text-lg text-white mt-3">Higher Secondary Certificate (HSC)</h3>
-            <p class="text-xs text-slate-300 mt-1">Dhaka Board</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-emeraldFresh font-bold">
-            GPA: 5.00 out of 5.00
-          </div>
-        </div>
-
-        <!-- SSC -->
-        <div class="zidan-card rounded-2xl p-6 border-t-2 border-t-warmAmber flex flex-col justify-between">
-          <div>
-            <span class="px-2.5 py-1 rounded-md bg-white/10 text-slate-300 font-mono text-[11px]">
-              2019 • Science
-            </span>
-            <h3 class="font-poppins font-bold text-lg text-white mt-3">Secondary School Certificate (SSC)</h3>
-            <p class="text-xs text-slate-300 mt-1">Comilla Board</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-warmAmber font-bold">
-            GPA: 5.00 out of 5.00
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= 8. CONTACT SECTION (FRIENDLY & DIRECT) ================= -->
-    <section id="contact" class="fade-up">
-      <div class="zidan-card rounded-3xl p-7 sm:p-10 border border-white/10">
+    <!-- ================= 7. CONTACT & FOOTER ================= -->
+    <section id="contact" class="reveal pt-6">
+      <div class="studio-card p-8 sm:p-12 border border-white/15 relative overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <!-- Left 6 Cols: Direct Contact Info -->
-          <div class="lg:col-span-6 space-y-5">
-            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-skyAccent">
-              <i class="fas fa-comments"></i> Let's Connect
-            </div>
-            <h2 class="font-poppins font-bold text-2xl sm:text-4xl text-white">
-              Get In Touch
+          <div class="lg:col-span-7 space-y-4">
+            <div class="font-mono text-xs text-amberGlow uppercase tracking-widest">05 / Contact</div>
+            <h2 class="font-syne font-extrabold text-3xl sm:text-5xl text-white leading-tight">
+              Let's build something together.
             </h2>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Whether you'd like to discuss transportation research, traffic simulation, civil engineering projects, or just say hello—feel free to reach out through any of the channels below!
+            <p class="text-sm sm:text-base text-zinc-400 max-w-lg">
+              Open for transportation research collaborations, traffic simulation projects, and civil engineering opportunities.
             </p>
 
-            <div class="space-y-3 pt-1">
-              <!-- IUT Email -->
-              <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
-                <div class="flex items-center gap-3 min-w-0">
-                  <div class="w-10 h-10 rounded-xl bg-royal/25 text-skyAccent flex items-center justify-center flex-shrink-0">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div class="min-w-0">
-                    <div class="text-[11px] text-slate-400">IUT Email</div>
-                    <div class="text-xs sm:text-sm font-semibold text-white truncate">muntasirraihan@iut-dhaka.edu</div>
-                  </div>
-                </div>
-                <button onclick="copyText('muntasirraihan@iut-dhaka.edu', 'IUT Email copied!')" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-royal text-xs font-mono text-skyAccent hover:text-white transition-colors">
-                  Copy
-                </button>
-              </div>
-
-              <!-- Personal Email -->
-              <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
-                <div class="flex items-center gap-3 min-w-0">
-                  <div class="w-10 h-10 rounded-xl bg-warmAmber/15 text-warmAmber flex items-center justify-center flex-shrink-0">
-                    <i class="fas fa-at"></i>
-                  </div>
-                  <div class="min-w-0">
-                    <div class="text-[11px] text-slate-400">Personal Email</div>
-                    <div class="text-xs sm:text-sm font-semibold text-white truncate">raihanmuntasir00@gmail.com</div>
-                  </div>
-                </div>
-                <button onclick="copyText('raihanmuntasir00@gmail.com', 'Personal Email copied!')" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-royal text-xs font-mono text-skyAccent hover:text-white transition-colors">
-                  Copy
-                </button>
-              </div>
-
-              <!-- Phone -->
-              <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-emeraldFresh/15 text-emeraldFresh flex items-center justify-center flex-shrink-0">
-                    <i class="fas fa-phone-alt"></i>
-                  </div>
-                  <div>
-                    <div class="text-[11px] text-slate-400">Phone / WhatsApp</div>
-                    <a href="tel:+8801856491451" class="text-xs sm:text-sm font-semibold text-white hover:text-skyAccent">+880 1856-491451</a>
-                  </div>
-                </div>
-                <button onclick="copyText('+8801856491451', 'Phone number copied!')" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-emeraldFresh/20 text-xs font-mono text-emeraldFresh transition-colors">
-                  Copy
-                </button>
-              </div>
-            </div>
-
-            <!-- Social Icon Row (Like Original Portfolio) -->
-            <div class="flex items-center gap-3 pt-2">
-              <a href="https://www.facebook.com/muntasir.raihan.7" target="_blank" rel="noopener" aria-label="Facebook" class="w-12 h-12 rounded-2xl bg-white/5 hover:bg-royal text-skyAccent hover:text-white border border-white/10 flex items-center justify-center text-lg transition-all hover:-translate-y-1">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/muntasir-raihan-zidan/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-12 h-12 rounded-2xl bg-white/5 hover:bg-royal text-skyAccent hover:text-white border border-white/10 flex items-center justify-center text-lg transition-all hover:-translate-y-1">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="tel:+8801856491451" aria-label="Phone" class="w-12 h-12 rounded-2xl bg-white/5 hover:bg-emeraldFresh text-emeraldFresh hover:text-midnight border border-white/10 flex items-center justify-center text-lg transition-all hover:-translate-y-1">
-                <i class="fas fa-phone-alt"></i>
-              </a>
-              <a href="https://mr-zidan.github.io/zidan/" target="_blank" rel="noopener" aria-label="Website" class="w-12 h-12 rounded-2xl bg-white/5 hover:bg-warmAmber text-warmAmber hover:text-midnight border border-white/10 flex items-center justify-center text-lg transition-all hover:-translate-y-1">
-                <i class="fas fa-globe"></i>
-              </a>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button
+                onclick="copyText('muntasirraihan@iut-dhaka.edu', 'IUT Email copied!')"
+                class="magnetic px-5 py-3 rounded-full bg-white text-obsidian font-syne font-bold text-xs uppercase tracking-wider hover:bg-amberGlow transition-all"
+              >
+                <i class="fas fa-copy mr-2"></i>muntasirraihan@iut-dhaka.edu
+              </button>
+              <button
+                onclick="copyText('raihanmuntasir00@gmail.com', 'Personal Email copied!')"
+                class="magnetic px-5 py-3 rounded-full bg-white/5 hover:bg-white/10 text-zinc-200 border border-white/15 font-mono text-xs transition-all"
+              >
+                raihanmuntasir00@gmail.com
+              </button>
             </div>
           </div>
 
-          <!-- Right 6 Cols: Quick Message Form -->
-          <div class="lg:col-span-6 bg-midnight/60 rounded-2xl p-6 border border-white/10">
-            <h3 class="font-poppins font-bold text-lg text-white mb-1">Send Me a Quick Note</h3>
-            <p class="text-xs text-slate-400 mb-4">Opens directly in your email app addressed to me.</p>
+          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3">
+            <a
+              href="https://www.linkedin.com/in/muntasir-raihan-zidan/"
+              target="_blank"
+              rel="noopener"
+              class="magnetic studio-card px-5 py-4 flex items-center justify-between hover:border-skyGlow/50"
+            >
+              <div class="flex items-center gap-3">
+                <i class="fab fa-linkedin text-xl text-skyGlow"></i>
+                <div>
+                  <div class="font-syne font-bold text-sm text-white">LinkedIn</div>
+                  <div class="text-xs text-zinc-400">/in/muntasir-raihan-zidan</div>
+                </div>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square text-xs text-zinc-500"></i>
+            </a>
 
-            <form onsubmit="sendQuickEmail(event)" class="space-y-3.5">
-              <div>
-                <label class="block text-xs text-slate-300 mb-1" for="visitorName">Your Name</label>
-                <input id="visitorName" type="text" required placeholder="Your name" class="w-full px-4 py-2.5 rounded-xl bg-panel border border-white/10 text-sm text-white focus:outline-none focus:border-royalLight" />
+            <a
+              href="https://www.facebook.com/muntasir.raihan.7"
+              target="_blank"
+              rel="noopener"
+              class="magnetic studio-card px-5 py-4 flex items-center justify-between hover:border-cobalt/50"
+            >
+              <div class="flex items-center gap-3">
+                <i class="fab fa-facebook text-xl text-cobalt"></i>
+                <div>
+                  <div class="font-syne font-bold text-sm text-white">Facebook</div>
+                  <div class="text-xs text-zinc-400">muntasir.raihan.7</div>
+                </div>
               </div>
-              <div>
-                <label class="block text-xs text-slate-300 mb-1" for="visitorSubject">Topic</label>
-                <input id="visitorSubject" type="text" required placeholder="Research / Project / Hello" class="w-full px-4 py-2.5 rounded-xl bg-panel border border-white/10 text-sm text-white focus:outline-none focus:border-royalLight" />
+              <i class="fas fa-arrow-up-right-from-square text-xs text-zinc-500"></i>
+            </a>
+
+            <a
+              href="tel:+8801856491451"
+              class="magnetic studio-card px-5 py-4 flex items-center justify-between hover:border-emeraldGlow/50"
+            >
+              <div class="flex items-center gap-3">
+                <i class="fas fa-phone-alt text-lg text-emeraldGlow"></i>
+                <div>
+                  <div class="font-syne font-bold text-sm text-white">Phone / WhatsApp</div>
+                  <div class="font-mono text-xs text-zinc-400">+880 1856-491451</div>
+                </div>
               </div>
-              <div>
-                <label class="block text-xs text-slate-300 mb-1" for="visitorMsg">Message</label>
-                <textarea id="visitorMsg" rows="3" required placeholder="Hi Zidan, I'd love to connect..." class="w-full px-4 py-2.5 rounded-xl bg-panel border border-white/10 text-sm text-white focus:outline-none focus:border-royalLight"></textarea>
-              </div>
-              <button type="submit" class="w-full py-3 rounded-xl font-poppins font-semibold text-sm bg-gradient-to-r from-royal to-royalLight hover:from-blue-600 hover:to-skyAccent text-white shadow-lg shadow-royal/25 transition-all">
-                <i class="fas fa-paper-plane mr-2"></i>Send Message
-              </button>
-            </form>
+              <i class="fas fa-phone text-xs text-zinc-500"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -1364,49 +1182,45 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-white/10 py-8 px-4 text-center text-xs text-slate-400">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>© 2026 <strong>Muntasir Raihan Zidan</strong> — All rights reserved.</div>
-      <div class="flex items-center gap-3">
-        <button onclick="togglePhotoStudio()" class="text-warmAmber hover:underline">
-          <i class="fas fa-camera mr-1"></i>Customize Photos
-        </button>
-        <span>•</span>
-        <button onclick="downloadPortfolio(false)" class="text-skyAccent hover:underline">
-          <i class="fas fa-download mr-1"></i>Download index.html
-        </button>
+  <footer class="border-t border-white/10 py-8 px-4 sm:px-8 text-xs text-zinc-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="font-mono">© 2026 MUNTASIR RAIHAN ZIDAN · IUT CEE</div>
+      <div class="flex items-center gap-4">
+        <button onclick="togglePhotoDrawer()" class="text-amberGlow hover:underline">Load Local Photos</button>
+        <span>·</span>
+        <button onclick="downloadPortfolio(false)" class="text-skyGlow hover:underline">Download index.html</button>
       </div>
     </div>
   </footer>
 
-  <!-- ================= LIGHTBOX MODAL FOR PHOTOS & BLUEPRINTS ================= -->
-  <div id="lightboxModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md" onclick="closeLightbox()">
-    <div class="max-w-4xl w-full bg-panel rounded-3xl p-4 border border-white/20 shadow-2xl" onclick="event.stopPropagation()">
+  <!-- ================= LIGHTBOX MODAL ================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-xl" onclick="closeLightbox()">
+    <div class="max-w-4xl w-full studio-card p-4 border border-white/20" onclick="event.stopPropagation()">
       <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-        <div id="lightboxCaption" class="font-poppins font-semibold text-sm text-white">Photo Preview</div>
-        <button onclick="closeLightbox()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
-          <i class="fas fa-times"></i>
+        <div id="lightboxCaption" class="font-syne font-bold text-sm text-white">Preview</div>
+        <button onclick="closeLightbox()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+          <i class="fas fa-times text-xs"></i>
         </button>
       </div>
-      <div class="max-h-[75vh] overflow-auto flex items-center justify-center bg-midnight rounded-2xl p-2">
-        <img id="lightboxImg" src="" alt="Expanded View" class="max-h-[70vh] w-auto rounded-xl object-contain" />
+      <div class="max-h-[75vh] overflow-auto flex items-center justify-center bg-obsidian rounded-xl p-2">
+        <img id="lightboxImg" src="" alt="Preview" class="max-h-[70vh] w-auto rounded-lg object-contain" />
       </div>
     </div>
   </div>
 
-  <!-- ================= SCRIPTS: ANIMATIONS, CANVASES, RINGS & PHOTO LOADER ================= -->
+  <!-- ================= STUDIO MOTION SCRIPTS ================= -->
   <script>
-    // ======== 1. Toast Notification (No alert()) ========
-    function showToast(msg, icon = 'fa-check-circle') {
+    // ======== 1. Toast Notification & Clipboard ========
+    function showToast(msg) {
       const container = document.getElementById('toastContainer');
-      const item = document.createElement('div');
-      item.className = 'zidan-card px-4 py-3 rounded-xl border border-skyAccent/40 text-xs font-medium text-white flex items-center gap-2.5 shadow-xl transition-all duration-300';
-      item.innerHTML = `<i class="fas ${icon} text-skyAccent"></i><span>${msg}</span>`;
-      container.appendChild(item);
+      const el = document.createElement('div');
+      el.className = 'px-4 py-2.5 rounded-full bg-[#12141C] border border-amberGlow/40 text-xs font-medium text-white shadow-2xl flex items-center gap-2';
+      el.innerHTML = `<span class="w-2 h-2 rounded-full bg-amberGlow"></span><span>${msg}</span>`;
+      container.appendChild(el);
       setTimeout(() => {
-        item.style.opacity = '0';
-        setTimeout(() => item.remove(), 300);
-      }, 3000);
+        el.style.opacity = '0';
+        setTimeout(() => el.remove(), 300);
+      }, 2800);
     }
 
     function copyText(text, msg) {
@@ -1418,28 +1232,27 @@
       ta.select();
       try {
         document.execCommand('copy');
-        showToast(msg || 'Copied to clipboard!');
+        showToast(msg || 'Copied!');
       } catch (e) {
-        showToast('Could not copy automatically.');
+        showToast('Copy failed');
       }
       document.body.removeChild(ta);
     }
 
-    // ======== 2. Photo Error Handling & Live Local Photo Studio ========
-    const loadedPhotosStore = {}; // stores base64 data URLs if user loads local files in preview
+    // ======== 2. Local Photo Loader & Fallback Manager ========
+    const loadedPhotosStore = {};
     let activeSingleSlot = null;
 
     function handleImgError(imgEl, slotName) {
-      // If user already loaded this slot in memory, use it
       if (loadedPhotosStore[slotName]) {
         imgEl.src = loadedPhotosStore[slotName];
         return;
       }
       imgEl.style.display = 'none';
-      const fallback = imgEl.parentElement.querySelector('.img-fallback');
-      if (fallback) {
-        fallback.classList.remove('hidden');
-        fallback.classList.add('flex');
+      const fb = imgEl.parentElement.querySelector('.img-fallback');
+      if (fb) {
+        fb.classList.remove('hidden');
+        fb.classList.add('flex');
       }
     }
 
@@ -1448,24 +1261,23 @@
       document.querySelectorAll(`img[data-slot="${slotName}"]`).forEach(img => {
         img.src = dataUrl;
         img.style.display = 'block';
-        const fallback = img.parentElement.querySelector('.img-fallback');
-        if (fallback) {
-          fallback.classList.add('hidden');
-          fallback.classList.remove('flex');
+        const fb = img.parentElement.querySelector('.img-fallback');
+        if (fb) {
+          fb.classList.add('hidden');
+          fb.classList.remove('flex');
         }
       });
     }
 
-    function togglePhotoStudio() {
-      const bar = document.getElementById('photoStudioBar');
-      bar.classList.toggle('hidden');
+    function togglePhotoDrawer() {
+      document.getElementById('photoDrawer').classList.toggle('hidden');
     }
 
     function triggerSinglePhoto(slotName) {
       activeSingleSlot = slotName;
-      const input = document.getElementById('singlePhotoInput');
-      input.value = '';
-      input.click();
+      const inp = document.getElementById('singlePhotoInput');
+      inp.value = '';
+      inp.click();
     }
 
     document.getElementById('singlePhotoInput').addEventListener('change', function (e) {
@@ -1474,53 +1286,38 @@
       const reader = new FileReader();
       reader.onload = function (ev) {
         applyPhotoToSlot(activeSingleSlot, ev.target.result);
-        showToast(`Loaded ${activeSingleSlot} into your live portfolio!`, 'fa-camera');
+        showToast(`Loaded ${activeSingleSlot}`);
       };
       reader.readAsDataURL(file);
     });
 
-    // Bulk photo matcher (matches by filename automatically)
     document.getElementById('bulkPhotoInput').addEventListener('change', function (e) {
       const files = Array.from(e.target.files);
-      if (!files.length) return;
-      const knownSlots = [
-        'n.png',
-        'Floorplan.png',
-        'slab reinforcement.png',
-        'aci.jpg',
-        'Math Club.jpg',
-        'Volleyball.jpeg',
-        'Basketball.jpeg'
-      ];
+      const slots = ['n.png', 'Floorplan.png', 'slab reinforcement.png', 'aci.jpg', 'Math Club.jpg', 'Volleyball.jpeg', 'Basketball.jpeg'];
+      let loadedCount = 0;
 
-      let count = 0;
       files.forEach(file => {
         const lower = file.name.toLowerCase();
-        let matchedSlot = knownSlots.find(s => s.toLowerCase() === lower);
-        if (!matchedSlot) {
-          if (lower.includes('floor')) matchedSlot = 'Floorplan.png';
-          else if (lower.includes('slab') || lower.includes('reinf')) matchedSlot = 'slab reinforcement.png';
-          else if (lower.includes('aci')) matchedSlot = 'aci.jpg';
-          else if (lower.includes('math')) matchedSlot = 'Math Club.jpg';
-          else if (lower.includes('volley')) matchedSlot = 'Volleyball.jpeg';
-          else if (lower.includes('basket')) matchedSlot = 'Basketball.jpeg';
-          else if (lower === 'n.jpg' || lower === 'n.jpeg' || lower.includes('zidan') || lower.includes('portrait')) matchedSlot = 'n.png';
+        let match = slots.find(s => s.toLowerCase() === lower);
+        if (!match) {
+          if (lower.includes('floor')) match = 'Floorplan.png';
+          else if (lower.includes('slab') || lower.includes('reinf')) match = 'slab reinforcement.png';
+          else if (lower.includes('aci')) match = 'aci.jpg';
+          else if (lower.includes('math')) match = 'Math Club.jpg';
+          else if (lower.includes('volley')) match = 'Volleyball.jpeg';
+          else if (lower.includes('basket')) match = 'Basketball.jpeg';
+          else if (lower.includes('n.') || lower.includes('zidan')) match = 'n.png';
         }
-
-        if (matchedSlot) {
-          count++;
+        if (match) {
+          loadedCount++;
           const reader = new FileReader();
-          reader.onload = function (ev) {
-            applyPhotoToSlot(matchedSlot, ev.target.result);
-          };
+          reader.onload = ev => applyPhotoToSlot(match, ev.target.result);
           reader.readAsDataURL(file);
         }
       });
-
-      showToast(`Matched & loaded ${count} photo(s)!`, 'fa-images');
+      showToast(`Matched & loaded ${loadedCount} photo(s)`);
     });
 
-    // ======== 3. Lightbox Modal ========
     function openLightbox(src, caption) {
       if (!src || src.endsWith('/')) return;
       const modal = document.getElementById('lightboxModal');
@@ -1544,210 +1341,448 @@
       modal.classList.remove('flex');
     }
 
-    // ======== 4. Rotating Friendly Role Text in Hero ========
-    const heroRoles = [
-      "Transportation Engineering Researcher",
-      "Computer Vision & Traffic Analytics Builder",
-      "President — ACI IUT & Lakshmipur Math Club",
-      "Captain — IUT CEE Volleyball Team",
-      "B.Sc. CEE Graduate & M.Sc. Student at IUT"
-    ];
-    let rIndex = 0;
-    let cIndex = 0;
-    let deleting = false;
-    const roleSpan = document.getElementById('heroRoleText');
+    // ======== 3. Split-Character Hero Reveal & Proximity Glow ========
+    function initHeroTypography() {
+      const titleEl = document.getElementById('heroDisplayTitle');
+      if (!titleEl) return;
+      const words = ['MUNTASIR', 'RAIHAN', 'ZIDAN'];
+      titleEl.innerHTML = '';
 
-    function typeRoleLoop() {
-      if (!roleSpan) return;
-      const current = heroRoles[rIndex];
-      cIndex = deleting ? cIndex - 1 : cIndex + 1;
-      roleSpan.textContent = current.substring(0, cIndex);
+      let charIndex = 0;
+      words.forEach((word, wIdx) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'inline-block mr-4';
+        for (let i = 0; i < word.length; i++) {
+          const ch = document.createElement('span');
+          ch.className = 'hero-char';
+          ch.style.animationDelay = `${charIndex * 28}ms`;
+          ch.textContent = word[i];
+          wordSpan.appendChild(ch);
+          charIndex++;
+        }
+        titleEl.appendChild(wordSpan);
+        if (wIdx === 1) titleEl.appendChild(document.createElement('br'));
+      });
 
-      let delay = deleting ? 28 : 52;
-      if (!deleting && cIndex === current.length) {
-        delay = 2000;
-        deleting = true;
-      } else if (deleting && cIndex === 0) {
-        deleting = false;
-        rIndex = (rIndex + 1) % heroRoles.length;
-        delay = 300;
-      }
-      setTimeout(typeRoleLoop, delay);
+      const chars = titleEl.querySelectorAll('.hero-char');
+      window.addEventListener('mousemove', e => {
+        chars.forEach(ch => {
+          const rect = ch.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+          if (dist < 130) {
+            const ratio = 1 - dist / 130;
+            ch.style.color = ratio > 0.5 ? '#38BDF8' : '#FFFFFF';
+            ch.style.transform = `translateY(${-ratio * 6}px)`;
+          } else {
+            ch.style.color = '';
+            ch.style.transform = '';
+          }
+        });
+      });
     }
 
-    // ======== 5. Live Video Analytics Simulation Canvas (Project 1) ========
-    let highCongestionMode = false;
-    function toggleTrafficDensity() {
-      highCongestionMode = !highCongestionMode;
-      const btnLabel = document.getElementById('densityBtnLabel');
-      const rusiVal = document.getElementById('liveRusiVal');
-      if (highCongestionMode) {
-        btnLabel.textContent = 'Restore Free Flow';
-        rusiVal.textContent = '46.2% (LOS E - Congested)';
-        rusiVal.className = 'text-warmAmber font-bold ml-1';
-      } else {
-        btnLabel.textContent = 'Simulate Peak Jam';
-        rusiVal.textContent = '78.4% (LOS B - Smooth)';
-        rusiVal.className = 'text-emeraldFresh font-bold ml-1';
+    // ======== 4. Dual-Ring Magnetic Cursor & Card Border Spotlight ========
+    function initMagneticCursor() {
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+      let ringX = mouseX, ringY = mouseY;
+
+      window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (dot) {
+          dot.style.left = mouseX + 'px';
+          dot.style.top = mouseY + 'px';
+        }
+
+        // Update radial border spotlight on all studio cards
+        document.querySelectorAll('.studio-card').forEach(card => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - r.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - r.top}px`);
+        });
+      });
+
+      function renderCursor() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        if (ring) {
+          ring.style.left = ringX + 'px';
+          ring.style.top = ringY + 'px';
+        }
+        requestAnimationFrame(renderCursor);
       }
+      renderCursor();
+
+      document.querySelectorAll('a, button, .magnetic').forEach(el => {
+        el.addEventListener('mouseenter', () => ring && ring.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => ring && ring.classList.remove('cursor-active'));
+      });
     }
 
-    function initVideoAnalyticsCanvas() {
-      const canvas = document.getElementById('videoAnalyticsCanvas');
+    // ======== 5. Studio Rim-Light Aura Shader & 3D Tilt Portrait ========
+    function initRimLightPortrait() {
+      const card = document.getElementById('heroPortraitCard');
+      const canvas = document.getElementById('rimLightCanvas');
+      if (!card || !canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = 240;
+      canvas.height = 280;
+      let angle = 0;
+
+      function drawRim() {
+        angle += 0.018;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+
+        // Rotating Cobalt + Warm Amber studio rim light
+        const x1 = cx + Math.cos(angle) * 90;
+        const y1 = cy + Math.sin(angle) * 90;
+        const x2 = cx + Math.cos(angle + Math.PI) * 90;
+        const y2 = cy + Math.sin(angle + Math.PI) * 90;
+
+        const g1 = ctx.createRadialGradient(x1, y1, 10, x1, y1, 130);
+        g1.addColorStop(0, 'rgba(37, 99, 235, 0.75)');
+        g1.addColorStop(1, 'transparent');
+        ctx.fillStyle = g1;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const g2 = ctx.createRadialGradient(x2, y2, 10, x2, y2, 120);
+        g2.addColorStop(0, 'rgba(249, 115, 22, 0.65)');
+        g2.addColorStop(1, 'transparent');
+        ctx.fillStyle = g2;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        requestAnimationFrame(drawRim);
+      }
+      drawRim();
+
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const nx = (e.clientX - r.left) / r.width - 0.5;
+        const ny = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateY(${nx * 12}deg) rotateX(${-ny * 12}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg)';
+      });
+    }
+
+    // ======== 6. Velocity-Reactive Infinite Kinetic Marquee ========
+    function initKineticMarquee() {
+      const track = document.getElementById('marqueeTrack');
+      if (!track) return;
+      let offset = 0;
+      let baseSpeed = 0.7;
+      let boost = 0;
+      let lastScroll = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        const delta = Math.abs(window.scrollY - lastScroll);
+        lastScroll = window.scrollY;
+        boost = Math.min(5, delta * 0.15);
+      }, { passive: true });
+
+      function animateMarquee() {
+        boost *= 0.92;
+        offset -= (baseSpeed + boost);
+        const halfWidth = track.scrollWidth / 2;
+        if (Math.abs(offset) >= halfWidth) offset = 0;
+        track.style.transform = `translate3d(${offset}px, 0, 0) skewX(${-boost * 1.4}deg)`;
+        requestAnimationFrame(animateMarquee);
+      }
+      animateMarquee();
+    }
+
+    // ======== 7. Interactive 3D Particle Morphing Canvas (180 Nodes) ========
+    let currentMorphIndex = 0;
+    const morphNodes = [];
+    const NODE_COUNT = 180;
+
+    function initParticleMorphCanvas() {
+      const canvas = document.getElementById('particleMorphCanvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let W, H;
 
       function resize() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        W = canvas.width = rect.width;
-        H = canvas.height = rect.height;
+        const r = canvas.parentElement.getBoundingClientRect();
+        W = canvas.width = r.width;
+        H = canvas.height = r.height;
       }
       resize();
       window.addEventListener('resize', resize);
 
-      const vehicles = [
-        { id: 104, type: 'CAR', lane: 0, x: 30, w: 46, h: 22, baseSpeed: 1.9, color: '#38bdf8' },
-        { id: 109, type: 'BUS', lane: 1, x: 160, w: 68, h: 26, baseSpeed: 1.35, color: '#f59e0b' },
-        { id: 112, type: 'CNG', lane: 2, x: 80, w: 34, h: 18, baseSpeed: 1.6, color: '#10b981' },
-        { id: 118, type: 'CAR', lane: 0, x: 240, w: 46, h: 22, baseSpeed: 1.85, color: '#38bdf8' },
-        { id: 124, type: 'RICKSHAW', lane: 2, x: 270, w: 28, h: 17, baseSpeed: 0.95, color: '#a855f7' }
+      for (let i = 0; i < NODE_COUNT; i++) {
+        morphNodes.push({
+          x: 0, y: 0, z: 0,
+          tx: 0, ty: 0, tz: 0
+        });
+      }
+
+      computeMorphTargets(0);
+      morphNodes.forEach(n => { n.x = n.tx; n.y = n.ty; n.z = n.tz; });
+
+      let rotY = 0.4, rotX = 0.25;
+      let isDragging = false, lastX = 0, lastY = 0;
+
+      canvas.addEventListener('mousedown', e => { isDragging = true; lastX = e.clientX; lastY = e.clientY; });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        rotY += (e.clientX - lastX) * 0.008;
+        rotX += (e.clientY - lastY) * 0.008;
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+
+      const palette = ['#38BDF8', '#F97316', '#10B981'];
+
+      function render3D() {
+        ctx.clearRect(0, 0, W, H);
+        if (!isDragging) rotY += 0.0045;
+
+        const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+        const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+        const projected = [];
+
+        for (let i = 0; i < NODE_COUNT; i++) {
+          const n = morphNodes[i];
+          n.x += (n.tx - n.x) * 0.07;
+          n.y += (n.ty - n.y) * 0.07;
+          n.z += (n.tz - n.z) * 0.07;
+
+          // Rotate Y then X
+          const x1 = n.x * cosY - n.z * sinY;
+          const z1 = n.z * cosY + n.x * sinY;
+          const y2 = n.y * cosX - z1 * sinX;
+          const z2 = z1 * cosX + n.y * sinX;
+
+          const fov = 310 / (310 + z2);
+          projected.push({
+            sx: W / 2 + x1 * fov,
+            sy: H / 2 + y2 * fov,
+            z: z2,
+            r: Math.max(1.4, 3.1 * fov)
+          });
+        }
+
+        // Draw subtle constellation lines
+        ctx.lineWidth = 0.7;
+        const activeColor = palette[currentMorphIndex];
+        for (let i = 0; i < projected.length; i++) {
+          for (let j = i + 1; j < projected.length; j++) {
+            const dx = projected[i].sx - projected[j].sx;
+            const dy = projected[i].sy - projected[j].sy;
+            const d = dx * dx + dy * dy;
+            if (d < 2400) {
+              ctx.strokeStyle = `rgba(255,255,255,${(1 - d / 2400) * 0.16})`;
+              ctx.beginPath();
+              ctx.moveTo(projected[i].sx, projected[i].sy);
+              ctx.lineTo(projected[j].sx, projected[j].sy);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw glowing nodes
+        projected.forEach((p, idx) => {
+          ctx.fillStyle = idx % 5 === 0 ? activeColor : '#F4F5F8';
+          ctx.beginPath();
+          ctx.arc(p.sx, p.sy, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        requestAnimationFrame(render3D);
+      }
+      render3D();
+    }
+
+    function computeMorphTargets(shapeIdx) {
+      currentMorphIndex = shapeIdx;
+      for (let i = 0; i < NODE_COUNT; i++) {
+        const n = morphNodes[i];
+        if (shapeIdx === 0) {
+          // 01: 3D Highway Trajectory Wave
+          const cols = 18;
+          const row = Math.floor(i / cols);
+          const col = i % cols;
+          n.tx = (col - cols / 2) * 14;
+          n.tz = (row - 5) * 20;
+          n.ty = Math.sin(col * 0.45 + row * 0.5) * 38;
+        } else if (shapeIdx === 1) {
+          // 02: 3D Structural Tower Lattice
+          const layer = Math.floor(i / 12);
+          const angle = ((i % 12) / 12) * Math.PI * 2;
+          const radius = 58 + (i % 2) * 18;
+          n.tx = Math.cos(angle) * radius;
+          n.tz = Math.sin(angle) * radius;
+          n.ty = (layer - 7) * 16;
+        } else {
+          // 03: 3D Geodesic Fibonacci Sphere
+          const phi = Math.acos(1 - 2 * (i + 0.5) / NODE_COUNT);
+          const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+          const r = 98;
+          n.tx = r * Math.sin(phi) * Math.cos(theta);
+          n.ty = r * Math.sin(phi) * Math.sin(theta);
+          n.tz = r * Math.cos(phi);
+        }
+      }
+    }
+
+    function setMorphShape(idx) {
+      computeMorphTargets(idx);
+      const badges = [
+        'STATE 01 // HIGHWAY TRAJECTORY WAVE',
+        'STATE 02 // STRUCTURAL TOWER LATTICE',
+        'STATE 03 // GEODESIC LEADERSHIP SPHERE'
+      ];
+      const captions = [
+        'YOLOv8 + ByteTrack + SUMO Mobility Pipeline',
+        'ETABS + AutoCAD BNBC Structural Framing',
+        'ACI IUT President · Math Club President · Volleyball Captain'
+      ];
+      document.getElementById('meshStateBadge').textContent = badges[idx];
+      document.getElementById('meshBottomCaption').textContent = captions[idx];
+
+      document.querySelectorAll('.morph-tab').forEach(btn => {
+        const active = parseInt(btn.dataset.morph, 10) === idx;
+        btn.classList.toggle('border-cobalt', active);
+        btn.classList.toggle('bg-surfaceHover', active);
+      });
+    }
+
+    // ======== 8. Live Video Analytics Canvas (Card 1) ========
+    let cvPeakJam = false;
+    function toggleCvJam() {
+      cvPeakJam = !cvPeakJam;
+      document.getElementById('cvJamBtn').innerHTML = cvPeakJam
+        ? '<i class="fas fa-sliders mr-1"></i>Restore Normal Flow'
+        : '<i class="fas fa-sliders mr-1"></i>Simulate Peak Jam';
+      const badge = document.getElementById('cvStatusBadge');
+      badge.textContent = cvPeakJam ? 'LOS E · 44% SATISFACTION' : 'LOS B · 78% SATISFACTION';
+      badge.className = cvPeakJam
+        ? 'px-2.5 py-1 rounded-full bg-obsidian/85 text-amberGlow border border-amberGlow/30'
+        : 'px-2.5 py-1 rounded-full bg-obsidian/85 text-emeraldGlow border border-white/10';
+    }
+
+    function initCvTrafficCanvas() {
+      const canvas = document.getElementById('cvTrafficCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H;
+      function resize() {
+        const r = canvas.parentElement.getBoundingClientRect();
+        W = canvas.width = r.width;
+        H = canvas.height = r.height;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const cars = [
+        { id: 101, cls: 'CAR', lane: 0, x: 20, w: 44, h: 20, v: 2.0, c: '#38BDF8' },
+        { id: 104, cls: 'BUS', lane: 1, x: 140, w: 66, h: 24, v: 1.4, c: '#F97316' },
+        { id: 108, cls: 'CNG', lane: 2, x: 70, w: 32, h: 17, v: 1.7, c: '#10B981' },
+        { id: 112, cls: 'CAR', lane: 0, x: 220, w: 44, h: 20, v: 1.9, c: '#38BDF8' }
       ];
 
-      function drawFrame() {
-        ctx.clearRect(0, 0, W, H);
-
-        // Road surface
-        ctx.fillStyle = '#091122';
+      function draw() {
+        ctx.fillStyle = '#06080E';
         ctx.fillRect(0, 0, W, H);
 
-        const roadTop = 28;
-        const roadBottom = H - 45;
-        const roadH = roadBottom - roadTop;
+        const top = 42, bottom = H - 42;
+        const laneH = (bottom - top) / 3;
 
-        // Lanes
-        ctx.strokeStyle = 'rgba(255,255,255,0.12)';
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([12, 10]);
+        ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+        ctx.setLineDash([10, 10]);
         for (let i = 1; i <= 2; i++) {
-          const y = roadTop + (roadH / 3) * i;
           ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(W, y);
+          ctx.moveTo(0, top + laneH * i);
+          ctx.lineTo(W, top + laneH * i);
           ctx.stroke();
         }
         ctx.setLineDash([]);
 
-        // Detection Zone Polygon
-        ctx.fillStyle = 'rgba(30, 84, 242, 0.08)';
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
-        ctx.lineWidth = 1;
-        ctx.strokeRect(18, roadTop + 4, W - 36, roadH - 8);
+        const mult = cvPeakJam ? 0.35 : 1;
+        cars.forEach(c => {
+          c.x += c.v * mult;
+          if (c.x > W + 30) c.x = -75;
+          const y = top + c.lane * laneH + 14;
 
-        // Update & draw tracked vehicles with bounding boxes
-        const speedMultiplier = highCongestionMode ? 0.38 : 1.0;
+          ctx.fillStyle = 'rgba(255,255,255,0.08)';
+          ctx.fillRect(c.x, y, c.w, c.h);
 
-        vehicles.forEach(v => {
-          v.x += v.baseSpeed * speedMultiplier;
-          if (v.x > W + 40) v.x = -80;
+          ctx.strokeStyle = c.c;
+          ctx.lineWidth = 1.6;
+          ctx.strokeRect(c.x, y, c.w, c.h);
 
-          const laneY = roadTop + v.lane * (roadH / 3) + 18;
-
-          // Trajectory tail
-          ctx.strokeStyle = v.color;
-          ctx.lineWidth = 1.5;
-          ctx.beginPath();
-          ctx.moveTo(v.x - 22, laneY + v.h / 2);
-          ctx.lineTo(v.x, laneY + v.h / 2);
-          ctx.stroke();
-
-          // Vehicle body
-          ctx.fillStyle = 'rgba(255,255,255,0.12)';
-          ctx.fillRect(v.x, laneY, v.w, v.h);
-
-          // YOLO Bounding Box
-          ctx.strokeStyle = v.color;
-          ctx.lineWidth = 1.8;
-          ctx.strokeRect(v.x, laneY, v.w, v.h);
-
-          // Label tag
-          const kmh = Math.round(v.baseSpeed * speedMultiplier * 24);
-          ctx.fillStyle = v.color;
-          ctx.font = 'bold 9px "JetBrains Mono", monospace';
-          ctx.fillText(`#${v.id} ${v.type} ${kmh}km/h`, v.x, laneY - 5);
+          const speed = Math.round(c.v * mult * 24);
+          ctx.fillStyle = c.c;
+          ctx.font = '500 9px "JetBrains Mono", monospace';
+          ctx.fillText(`ID:${c.id} ${c.cls} ${speed}km/h`, c.x, y - 5);
         });
 
-        requestAnimationFrame(drawFrame);
+        requestAnimationFrame(draw);
       }
-      drawFrame();
+      draw();
     }
 
-    // ======== 6. Interactive SUMO Intersection Canvas (Project 2) ========
-    let sumoGreenHorizontal = true;
-    function switchSumoSignal() {
-      sumoGreenHorizontal = !sumoGreenHorizontal;
+    // ======== 9. Live SUMO Signalized Intersection Canvas (Card 2) ========
+    let sumoEWGreen = true;
+    function toggleSumoPhase() {
+      sumoEWGreen = !sumoEWGreen;
+      const lbl = document.getElementById('sumoPhaseLabel');
+      lbl.textContent = sumoEWGreen ? 'PHASE A: E-W GREEN' : 'PHASE B: N-S GREEN';
     }
 
     function initSumoCanvas() {
-      const canvas = document.getElementById('sumoSimCanvas');
+      const canvas = document.getElementById('sumoCanvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let W, H;
-
       function resize() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        W = canvas.width = rect.width;
-        H = canvas.height = rect.height;
+        const r = canvas.parentElement.getBoundingClientRect();
+        W = canvas.width = r.width;
+        H = canvas.height = r.height;
       }
       resize();
       window.addEventListener('resize', resize);
 
-      const hCars = [{ x: 10 }, { x: 65 }, { x: 190 }];
-      const vCars = [{ y: 15 }, { y: 150 }];
+      const ew = [{ x: 10 }, { x: 95 }, { x: 220 }];
+      const ns = [{ y: 15 }, { y: 155 }];
 
       function loop() {
-        ctx.clearRect(0, 0, W, H);
-        const cx = W / 2;
-        const cy = H / 2;
+        ctx.fillStyle = '#06080E';
+        ctx.fillRect(0, 0, W, H);
+        const cx = W / 2, cy = H / 2;
 
-        // Roads
-        ctx.fillStyle = '#141e33';
-        ctx.fillRect(0, cy - 22, W, 44);
-        ctx.fillRect(cx - 22, 0, 44, H);
+        ctx.fillStyle = '#101420';
+        ctx.fillRect(0, cy - 24, W, 48);
+        ctx.fillRect(cx - 24, 0, 48, H);
 
-        // Center lines
-        ctx.strokeStyle = '#f59e0b';
-        ctx.setLineDash([6, 6]);
-        ctx.beginPath();
-        ctx.moveTo(0, cy); ctx.lineTo(W, cy);
-        ctx.moveTo(cx, 0); ctx.lineTo(cx, H);
-        ctx.stroke();
-        ctx.setLineDash([]);
+        // Signal indicators
+        ctx.fillStyle = sumoEWGreen ? '#10B981' : '#EF4444';
+        ctx.beginPath(); ctx.arc(cx - 32, cy - 32, 5, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = !sumoEWGreen ? '#10B981' : '#EF4444';
+        ctx.beginPath(); ctx.arc(cx + 32, cy - 32, 5, 0, Math.PI * 2); ctx.fill();
 
-        // Traffic lights
-        ctx.fillStyle = sumoGreenHorizontal ? '#10b981' : '#ef4444';
-        ctx.beginPath(); ctx.arc(cx - 28, cy - 28, 5, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = !sumoGreenHorizontal ? '#10b981' : '#ef4444';
-        ctx.beginPath(); ctx.arc(cx + 28, cy - 28, 5, 0, Math.PI * 2); ctx.fill();
-
-        // Horizontal cars
-        hCars.forEach(c => {
-          if (sumoGreenHorizontal || c.x < cx - 50 || c.x > cx - 15) {
-            c.x += 1.4;
-          }
+        ew.forEach(c => {
+          if (sumoEWGreen || c.x < cx - 52 || c.x > cx - 18) c.x += 1.6;
           if (c.x > W + 20) c.x = -30;
-          ctx.fillStyle = '#38bdf8';
-          ctx.fillRect(c.x, cy - 14, 18, 9);
+          ctx.fillStyle = '#38BDF8';
+          ctx.fillRect(c.x, cy - 14, 20, 10);
         });
 
-        // Vertical cars
-        vCars.forEach(c => {
-          if (!sumoGreenHorizontal || c.y < cy - 50 || c.y > cy - 15) {
-            c.y += 1.3;
-          }
+        ns.forEach(c => {
+          if (!sumoEWGreen || c.y < cy - 52 || c.y > cy - 18) c.y += 1.5;
           if (c.y > H + 20) c.y = -30;
-          ctx.fillStyle = '#10b981';
-          ctx.fillRect(cx + 5, c.y, 9, 18);
+          ctx.fillStyle = '#F97316';
+          ctx.fillRect(cx + 6, c.y, 10, 20);
         });
 
         requestAnimationFrame(loop);
@@ -1755,185 +1790,29 @@
       loop();
     }
 
-    // ======== 7. Upgraded Circular Skill Rings (From Original Portfolio) ========
-    const ringSkills = [
-      { name: "SUMO", value: 85, icon: "S", c0: "#1e54f2", c1: "#38bdf8" },
-      { name: "AutoCAD", value: 80, icon: "A", c0: "#1e54f2", c1: "#60a5fa" },
-      { name: "Python & CV", value: 80, icon: "Py", c0: "#f59e0b", c1: "#38bdf8" },
-      { name: "VISSIM", value: 75, icon: "V", c0: "#10b981", c1: "#38bdf8" },
-      { name: "ETABS", value: 65, icon: "E", c0: "#1e54f2", c1: "#38bdf8" },
-      { name: "Abaqus", value: 60, icon: "Ab", c0: "#6366f1", c1: "#38bdf8" }
-    ];
+    // ======== 10. Scroll Reveal & Skill Bar Trigger ========
+    function initScrollReveal() {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+              bar.style.width = (bar.dataset.width || '0') + '%';
+            });
+          }
+        });
+      }, { threshold: 0.15 });
 
-    const ringGrid = document.getElementById('ringGrid');
-    ringSkills.forEach(skill => {
-      const item = document.createElement('div');
-      item.className = 'flex flex-col items-center w-36';
-      item.innerHTML = `
-        <div class="relative w-32 h-32 flex items-center justify-center">
-          <canvas class="ring-canvas w-32 h-32" width="128" height="128"
-            data-value="${skill.value}" data-c0="${skill.c0}" data-c1="${skill.c1}"></canvas>
-          <div class="absolute top-2 left-2 w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[11px] font-mono font-bold text-skyAccent">
-            ${skill.icon}
-          </div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <span class="ring-label font-poppins font-bold text-xl text-white">0%</span>
-            <span class="text-xs text-slate-400 mt-0.5">${skill.name}</span>
-          </div>
-        </div>
-      `;
-      ringGrid.appendChild(item);
-    });
-
-    function animateRingCanvas(canvas) {
-      const target = parseInt(canvas.dataset.value || '0', 10);
-      const c0 = canvas.dataset.c0;
-      const c1 = canvas.dataset.c1;
-      const label = canvas.parentElement.querySelector('.ring-label');
-      const dpr = window.devicePixelRatio || 1;
-      const size = 128;
-      canvas.width = size * dpr;
-      canvas.height = size * dpr;
-      const ctx = canvas.getContext('2d');
-      ctx.scale(dpr, dpr);
-
-      const cx = size / 2, cy = size / 2, radius = 48, thickness = 11;
-      const start = performance.now();
-      const duration = 1350;
-
-      function tick(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const p = eased * target;
-
-        ctx.clearRect(0, 0, size, size);
-        ctx.beginPath();
-        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-        ctx.lineWidth = thickness;
-        ctx.stroke();
-
-        const grad = ctx.createLinearGradient(0, 0, size, size);
-        grad.addColorStop(0, c0);
-        grad.addColorStop(1, c1);
-
-        const endAngle = -Math.PI / 2 + (Math.PI * 2) * (p / 100);
-        ctx.beginPath();
-        ctx.arc(cx, cy, radius, -Math.PI / 2, endAngle);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = thickness;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-
-        if (label) label.textContent = Math.round(p) + '%';
-        if (t < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     }
 
-    // ======== 8. Scroll Observer for Fade-Up, Counters, Rings & Progress Bars ========
-    function animateStatCounter(el) {
-      const target = parseFloat(el.dataset.target || '0');
-      const decimals = parseInt(el.dataset.decimals || '0', 10);
-      const start = performance.now();
-      const duration = 1300;
-      function step(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = (target * eased).toFixed(decimals);
-        if (t < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-
-          entry.target.querySelectorAll('.stat-counter').forEach(el => {
-            if (!el.dataset.done) {
-              el.dataset.done = '1';
-              animateStatCounter(el);
-            }
-          });
-
-          entry.target.querySelectorAll('.ring-canvas').forEach(c => {
-            if (!c.dataset.done) {
-              c.dataset.done = '1';
-              animateRingCanvas(c);
-            }
-          });
-
-          entry.target.querySelectorAll('.bar-fill').forEach(b => {
-            const target = b.dataset.target || '0';
-            setTimeout(() => { b.style.width = target + '%'; }, 180);
-          });
-        }
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // ======== 9. Project Category Filter ========
-    function filterCards(cat) {
-      document.querySelectorAll('.proj-tab').forEach(btn => {
-        const active = btn.dataset.cat === cat;
-        btn.className = active
-          ? 'proj-tab px-4 py-2 rounded-xl text-xs font-poppins font-semibold bg-royal text-white transition-all'
-          : 'proj-tab px-4 py-2 rounded-xl text-xs font-poppins font-medium bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all';
-      });
-
-      document.querySelectorAll('.proj-item').forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // ======== 10. Subtle 3D Tilt on Cards & Ambient Cursor Glow ========
-    const cursorGlow = document.getElementById('cursorGlow');
-    window.addEventListener('mousemove', (e) => {
-      if (cursorGlow) {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-      }
-    });
-
-    document.querySelectorAll('.tilt-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const rotateY = ((x / rect.width) - 0.5) * 6;
-        const rotateX = ((y / rect.height) - 0.5) * -6;
-        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
-    });
-
-    // ======== 11. Quick Email Sender & HTML Exporter ========
-    function sendQuickEmail(e) {
-      e.preventDefault();
-      const name = document.getElementById('visitorName').value.trim();
-      const subj = document.getElementById('visitorSubject').value.trim();
-      const msg = document.getElementById('visitorMsg').value.trim();
-      const mailto = `mailto:muntasirraihan@iut-dhaka.edu?cc=raihanmuntasir00@gmail.com&subject=${encodeURIComponent(subj + ' — from ' + name)}&body=${encodeURIComponent(msg)}`;
-      window.location.href = mailto;
-      showToast('Opening your email client...');
-    }
-
-    function downloadPortfolio(embedBase64) {
+    // ======== 11. One-Click HTML Exporter ========
+    function downloadPortfolio(embedPhotos) {
       const clone = document.documentElement.cloneNode(true);
-      const studio = clone.querySelector('#photoStudioBar');
-      if (studio) studio.classList.add('hidden');
+      const drawer = clone.querySelector('#photoDrawer');
+      if (drawer) drawer.classList.add('hidden');
 
-      if (!embedBase64) {
-        // Restore original local filenames (n.png, aci.jpg, etc.) for clean folder deployment
+      if (!embedPhotos) {
         clone.querySelectorAll('img[data-slot]').forEach(img => {
           img.setAttribute('src', img.getAttribute('data-slot'));
           img.style.display = '';
@@ -1950,23 +1829,18 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast(embedBase64 ? 'Downloaded index.html with embedded photos!' : 'Downloaded clean index.html for your folder!');
-    }
-
-    // Mobile nav toggle
-    const mobileBtn = document.getElementById('mobileNavToggle');
-    const mobileMenu = document.getElementById('mobileNavMenu');
-    if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-      document.querySelectorAll('.mobile-nav-link').forEach(l => {
-        l.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-      });
+      showToast(embedPhotos ? 'Downloaded HTML with embedded photos!' : 'Downloaded clean index.html!');
     }
 
     window.onload = function () {
-      typeRoleLoop();
-      initVideoAnalyticsCanvas();
+      initHeroTypography();
+      initMagneticCursor();
+      initRimLightPortrait();
+      initKineticMarquee();
+      initParticleMorphCanvas();
+      initCvTrafficCanvas();
       initSumoCanvas();
+      initScrollReveal();
     };
   </script>
 </body>
